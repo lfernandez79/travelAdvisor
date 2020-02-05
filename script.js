@@ -2,10 +2,9 @@
 
 
 var cityName = $("#cityName").val();
-
 var settings = {
 
-  url:"https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-text?text=Dallas",
+  url:"https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-text?text=&" + cityName,
   method: "GET",
   headers: {
     "x-rapidapi-host": "cometari-airportsfinder-v1.p.rapidapi.com" ,    
@@ -13,10 +12,17 @@ var settings = {
   }
 };
 
+
+
 $.ajax(settings).done(function (response) {
   console.log(response);
 
+  $("#airportBtn").on("click", function(){
+
+  })
+
   var $newUl = $("<ul>")
+  
   response.forEach(airport => {
 
       var $newLi = $(`<li>${airport.name}</li>`); 
