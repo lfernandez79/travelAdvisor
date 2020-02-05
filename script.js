@@ -4,7 +4,7 @@
 var cityName = $("#cityName").val();
 var settings = {
 
-  url:"https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-text?text=&" + cityName,
+  url:"https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-text?text=Dallas",
   method: "GET",
   headers: {
     "x-rapidapi-host": "cometari-airportsfinder-v1.p.rapidapi.com" ,    
@@ -25,7 +25,7 @@ $.ajax(settings).done(function (response) {
   
   response.forEach(airport => {
 
-      var $newLi = $(`<li>${airport.name}</li>`); 
+      var $newLi = $(`<li class="text-info">${airport.name} / ${airport.code}</li>`); 
       $newLi.appendTo($newUl)
       
       });
@@ -35,6 +35,7 @@ $.ajax(settings).done(function (response) {
       
     
 // ============================================= World Time =========================================================
+
 
 // var settings = {
 //     "async": true,
