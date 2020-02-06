@@ -71,7 +71,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Select your currency from the dropdown menu to see the current exchange
                             rate.</h5>
-                        <select name="">
+                        <select id="first-currency" name="">
                             <option value="AUD">Australian Dolloar(AUD)</option>
                             <option value="BGN">Bulgarian Lev(BGN)</option>
                             <option value="BRL">Brazilian Real(BRL)</option>
@@ -106,7 +106,8 @@
                             <option value="USD">United States Dollar(USD)</option>
                             <option value="ZAR">South African Rand(ZAR)</option>
                         </select>
-                        <select name="">
+
+                        <select id="second-currency" name="">
                             <option value="AUD">Australian Dolloar(AUD)</option>
                             <option value="BGN">Bulgarian Lev(BGN)</option>
                             <option value="BRL">Brazilian Real(BRL)</option>
@@ -141,10 +142,9 @@
                             <option value="USD">United States Dollar(USD)</option>
                             <option value="ZAR">South African Rand(ZAR)</option>
                         </select>
+
+                        <input id="currency-amount" type="number"></input>
                         
-
-                            
-
                         <button id="convertBtn" type="button" class="btn btn-primary">Convert</button>
 
 
