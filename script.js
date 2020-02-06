@@ -1,5 +1,4 @@
 
-
 var theCity;
 
 // BUTTON GRAB VALUE FROM INPUT #CITYNAME
