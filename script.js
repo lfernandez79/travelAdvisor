@@ -43,6 +43,67 @@ $("#airportBtn").on("click", function(event) {
 });
 
 // ======================================== Currency converter API ============================================-=
+
+$("#clockSearchBtn").on("click", function(e) {
+    event.preventDefault();
+
+    // $('input[type="text"]').val("");
+
+    var clockCountry = $("#clock-country").val();
+
+    var clockCity = $("#clock-city").val();
+
+    var timezoneSettings = setTimezoneSettings(clockCountry, clockCity);
+
+    console.log(timezoneSettings.url);
+
+    $.ajax(timezoneSettings).done(function(response) {
+        console.log("full response:", response.datetime);
+
+        moment(response.datetime, "HH:mm:ss").format("hh:mm A");
+
+        var date = response.datetime;
+
+        var $clockUl = $("<ul>");
+
+        var $clockLi = $(
+            `<li class="text-info">${
+                response.timezone
+            }</li><li class="text-info">${
+                // moment().format(date)
+
+                // var date = response.datetime;
+
+                response.datetime
+
+                // .format(
+
+                //  "dddd, MMMM Do YYYY, h:mm:ss a"
+
+                // )
+
+                // .utc()
+
+                // .format("dddd, MMMM Do YYYY, h:mm a")
+            }</li>`
+        );
+
+        console.log(
+            moment(response.datetime, "HH:mm:ss").format("hh:mm A")
+
+            // .utc()
+
+            // .format()
+        );
+
+        $clockLi.appendTo($clockUl);
+
+        $clockUl.appendTo("#clockZones");
+    });
+});
+
+
+// ======================================== Currency converter API ============================================-=
 var cur1 = $("#first-currency").val();
 var cur2 = $("#second-currency").val();
 var amount = $("currency-amount").val();
