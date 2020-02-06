@@ -1,4 +1,4 @@
-// ============================================ AIRPORT FINDER =================================================
+
 
 var theCity;
 
@@ -35,5 +35,8 @@ $("#airportBtn").on("click", function (event) {
       });
  $newUl.appendTo("#airportNames")
 
-    }); 
+$.ajax(settings).done(function (response) {
+    console.log(response);
+  });
   })
+})
