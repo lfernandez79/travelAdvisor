@@ -16,6 +16,8 @@
 </head>
 
 <body>
+    <!-- <canvas id="canvas-basic"></canvas> -->
+    
     <header class="container">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
@@ -46,16 +48,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div id="clockZones" class="col">
                 <div class="card border-light mb-3" style="max-width: 18rem;">
 
                     <!-- WORLD TIMER -->
                     <div class="card-header">World Time</div>
                     <div class="card-body">
                         <h5 class="card-title">Enter in a city and country to get the current timezone.</h5>
-                        <input type="text" placeholder="City Name.." />
-                        <input type="text" placeholder="Country Name.." />
-                        <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0 search" type="submit">
+                        <input id="clock-city" type="text" placeholder="City Name.." />
+                        <input id="clock-country" type="text" placeholder="Country Name.." />
+                        <button id="clockSearchBtn" class="btn btn-outline-success my-2 my-sm-0 search" type="submit">
                             <i class="fas fa-search"></i>
 
                     </div>
@@ -142,7 +144,6 @@
                             <option value="TRL">Turkey Lira</option>
                             <option value="VEB">Venezuela Bolivar</option>
                             <option value="ZMK">Zambia Kwacha</option>
-                            <option value="EUR">Euro</option>
                             <option value="XCD">Eastern Caribbean Dollars</option>
                             <option value="XDR">Special Drawing Right (IMF)</option>
                             <option value="XAG">Silver Ounces</option>
@@ -224,7 +225,6 @@
                             <option value="TRL">Turkey Lira</option>
                             <option value="VEB">Venezuela Bolivar</option>
                             <option value="ZMK">Zambia Kwacha</option>
-                            <option value="EUR">Euro</option>
                             <option value="XCD">Eastern Caribbean Dollars</option>
                             <option value="XDR">Special Drawing Right (IMF)</option>
                             <option value="XAG">Silver Ounces</option>
