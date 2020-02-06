@@ -29,34 +29,48 @@
 
 // ============================================= World Time =========================================================
 
-var clockCountry = $("#clock-country").val();
-var clockCity = $("#clock-city").val();
+function setTimezoneSettings(clockCountry, clockCity) {
+	return {
+		async: true,
+		crossDomain: true,
+		url:
+			"https://world-time2.p.rapidapi.com/timezone/" +
+			clockCountry +
+			"/" +
+			clockCity,
+		method: "GET",
+		headers: {
+			"x-rapidapi-host": "world-time2.p.rapidapi.com",
+			"x-rapidapi-key":
+				"d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
+		}
+	};
+}
+$("#clockSearchBtn").on("click", function() {
+	// $('input[type="text"]').val("");
 
-var timezoneSettings = {
-	async: true,
-	crossDomain: true,
-	url:
-		"https://world-time2.p.rapidapi.com/timezone/" +
-		clockCountry +
-		"/" +
-		clockCity,
-	method: "GET",
-	headers: {
-		"x-rapidapi-host": "world-time2.p.rapidapi.com",
-		"x-rapidapi-key": "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
-	}
-};
-
-$.ajax(timezoneSettings).done(function(response) {
-	console.log(response);
-
-	$("#clockSearchBtn").on("click", function() {
+	var clockCountry = $("#clock-country").val();
+	var clockCity = $("#clock-city").val();
+	var timezoneSettings = setTimezoneSettings(clockCountry, clockCity);
+	console.log(timezoneSettings.url);
+	$.ajax(timezoneSettings).done(function(response) {
+		console.log(response);
 		var $clockUl = $("<ul>");
 
-		response.forEach(clock => {
-			var $clockLi = $(`<li class="text-info">${clock.timezone}</li>`);
-			$clockLi.appendTo($clockUl);
-		});
+		var $clockLi = $(
+			`<li class="text-info">${
+				response.timezone
+			}</li><li class="text-info">${moment(response.datetime)
+				.utc()
+				.format("dddd, MMMM Do YYYY, h:mm a")}</li>`
+		);
+		// console.log(
+		// 	moment(response.utc_datetime)
+		// 		.utc()
+		// 		.format("dddd, MMMM Do YYYY, h:mm:ss a")
+		// );
+
+		$clockLi.appendTo($clockUl);
 		$clockUl.appendTo("#clockZones");
 	});
 });
