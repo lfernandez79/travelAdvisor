@@ -7,3 +7,17 @@
 	bottom: 0;
 	left: 0;
 } */
+
+select {
+	margin: 10px;
+}
+
+#convertBtn {
+	background-color: lightblue;
+	color: black;
+	border: none;
+}
+
+#convertBtn:hover {
+	background-color: green;
+}
