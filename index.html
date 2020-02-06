@@ -14,6 +14,9 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
 </head>
+<link rel="icon" type="image/png" sizes="32x32" href="airPlane/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="airPlane/favicon-16x16.png">
+<link rel="manifest" href="airPlane/">
 
 <body>
     <!-- <canvas id="canvas-basic"></canvas> -->
@@ -41,7 +44,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Find all airports within a city.</h5>
-                        <input id="cityName" type="text" placeholder="City Name.." />
+                        <input id="cityName" type="text" onfocus="this.value=''" placeholder="City Name.." />
                         <button id="airportBtn" class="btn btn-outline-success my-2 my-sm-0 search" type="submit">
                         <i class="fas fa-search"></i>
 
