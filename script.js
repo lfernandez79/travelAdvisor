@@ -1,3 +1,4 @@
+
 var theCity;
 
 // BUTTON GRAB VALUE FROM INPUT #CITYNAME
@@ -11,8 +12,7 @@ $("#airportBtn").on("click", function(event) {
 		async: true,
 		crossDomain: true,
 		url:
-			"https://cors-anywhere.herokuapp.com/https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-text?text=" +
-			theCity,
+			"https://cors-anywhere.herokuapp.com/https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-text?text=" + theCity,
 		method: "GET",
 		headers: {
 			"x-rapidapi-host": "cometari-airportsfinder-v1.p.rapidapi.com",
@@ -34,15 +34,13 @@ $("#airportBtn").on("click", function(event) {
 
 			$newLi.appendTo($newUl);
 		});
+		// APPENDTO PAGE
 		$newUl.appendTo("#airportNames");
 
-		$.ajax(settings).done(function(response) {
-			console.log(response);
-		});
 	});
 });
 
-// ======================================== Currency converter API ============================================-=
+// ======================================== WORLD TIME ZONE ============================================-=
 
 $("#clockSearchBtn").on("click", function(e) {
     event.preventDefault();
@@ -103,31 +101,39 @@ $("#clockSearchBtn").on("click", function(e) {
 });
 
 
-// ======================================== Currency converter API ============================================-=
-var cur1 = $("#first-currency").val();
-var cur2 = $("#second-currency").val();
-var amount = $("currency-amount").val();
-cur1 = EUR;
-cur2 = CAD;
-var settings = {
-	async: true,
-	crossDomain: true,
-	url:
-		"https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=" +
-		cur1 +
-		"&to=" +
-		cur2 +
-		"&amount=" +
-		amount,
-	method: "GET",
-	headers: {
-		"x-rapidapi-host": "currency-converter5.p.rapidapi.com",
-		"x-rapidapi-key": "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
-	}
-};
+// ======================================== CURRENCY CONVERTER API ============================================-=
 
-$("#convertBtn").on("click", function() {});
+var amount;
 
-$.ajax(settings).done(function(response) {
-	console.log(response);
+// BUTTON TO CONVERT CURRENCY, GRAB HTML IDs IN VARIABLES TO BE USE LATER =========================================
+$("#convertBtn").on("click", function(event) {
+	var cur1 = $("#first-currency").val();
+    var cur2 = $("#second-currency").val();
+	amount = $("#currency-amount").val();
+
+	// AJAX CALL TO URL, CUR1, CUR2 TAKE ANY VALUE SELECTED ON THE HTML PAGE ===================
+	var settings = {
+    async: true,
+    crossDomain: true,
+    url:
+      "https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=" +
+      cur1 +
+      "&to=" +
+      cur2 +
+      "&amount=" +
+      amount,
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "currency-converter5.p.rapidapi.com",
+      "x-rapidapi-key": "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
+    }
+  };
+		$.ajax(settings).done(function(response) {
+		console.log(response);
+		});
+	console.log(amount);
 });
+// =========================================================================================
+
+
+
