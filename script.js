@@ -1,3 +1,4 @@
+
 var theCity;
 
 // BUTTON GRAB VALUE FROM INPUT #CITYNAME
@@ -11,8 +12,7 @@ $("#airportBtn").on("click", function(event) {
 		async: true,
 		crossDomain: true,
 		url:
-			"https://cors-anywhere.herokuapp.com/https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-text?text=" +
-			theCity,
+			"https://cors-anywhere.herokuapp.com/https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-text?text=" + theCity,
 		method: "GET",
 		headers: {
 			"x-rapidapi-host": "cometari-airportsfinder-v1.p.rapidapi.com",
@@ -34,15 +34,16 @@ $("#airportBtn").on("click", function(event) {
 
 			$newLi.appendTo($newUl);
 		});
+		// APPENDTO PAGE
 		$newUl.appendTo("#airportNames");
 
-		$.ajax(settings).done(function(response) {
-			console.log(response);
-		});
+		// $.ajax(settings).done(function(response) {
+		// 	console.log(response);
+		// });
 	});
 });
 
-// ======================================== Currency converter API ============================================-=
+// ======================================== WORLD TIME ZONE ============================================-=
 
 $("#clockSearchBtn").on("click", function(e) {
     event.preventDefault();
@@ -103,22 +104,16 @@ $("#clockSearchBtn").on("click", function(e) {
 });
 
 
-// ======================================== Currency converter API ============================================-=
+// ======================================== CURRENCY CONVERTER API ============================================-=
 var cur1 = $("#first-currency").val();
 var cur2 = $("#second-currency").val();
-var amount = $("currency-amount").val();
-cur1 = EUR;
-cur2 = CAD;
+var amount;
+// cur1 = EUR;
+// cur2 = CAD;
 var settings = {
 	async: true,
 	crossDomain: true,
-	url:
-		"https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=" +
-		cur1 +
-		"&to=" +
-		cur2 +
-		"&amount=" +
-		amount,
+	url:"https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=" + cur1 + "&to=" + cur2 + "&amount=" + amount,
 	method: "GET",
 	headers: {
 		"x-rapidapi-host": "currency-converter5.p.rapidapi.com",
@@ -126,7 +121,12 @@ var settings = {
 	}
 };
 
-$("#convertBtn").on("click", function() {});
+$("#convertBtn").on("click", function(event) {
+	amount = $("#currency-amount").val();
+	console.log(amount);
+});
+
+
 
 $.ajax(settings).done(function(response) {
 	console.log(response);
