@@ -36,14 +36,14 @@
 
     <main class="container">
         <div class="row">
-            <div id="airportNames" class="col">
+            <div class="col">
                 <div class="card border-light mb-3" style="max-width: 18rem;">
 
                     <!--AIRPORT FINDER-->
                     <div class="card-header">
                         Airport Finder
                     </div>
-                    <div class="card-body">
+                    <div id="airportNames" class="card-body">
                         <h5 class="card-title">Find all airports within a city.</h5>
                         <input id="cityName" type="text" onfocus="this.value=''" placeholder="City Name.." />
                         <button id="airportBtn" class="btn btn-outline-success my-2 my-sm-0 search" type="submit">
@@ -52,12 +52,13 @@
                     </div>
                 </div>
             </div>
-            <div id="clockZones" class="col">
-                <div class="card border-light mb-3" style="max-width: 18rem;">
 
-                    <!-- WORLD TIMER -->
+            <!-- WORLD TIMER -->
+            <div class="col">
+                
+                <div class="card border-light mb-3" style="max-width: 18rem;">              
                     <div class="card-header">World Time</div>
-                    <div class="card-body">
+                    <div id="clockZones" class="card-body">
                         <h5 class="card-title">Enter in a city and country to get the current timezone.</h5>
                         <input id="clock-city" type="text" placeholder="City Name.." />
                         <input id="clock-country" type="text" placeholder="Country Name.." />
@@ -67,12 +68,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card border-light mb-3" style="max-width: 18rem;">
 
-                    <!-- CURRENCY CONVERTER -->
+            <!-- CURRENCY CONVERTER -->
+            <div class="col">
+                <div class="card border-light mb-3" style="max-width: 18rem;">                    
                     <div class="card-header">Currency Converter</div>
-                    <div class="card-body">
+                    <div id="currencyConv" class="card-body">
                         <h5 class="card-title">Select your currency from the dropdown menu to see the current exchange
                             rate.</h5>
                         <select id="first-currency" name="">
