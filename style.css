@@ -1,18 +1,14 @@
-/* #canvas-basic {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-} */
-
-body {
+.jumbotron {
     background: linear-gradient(-45deg, #775e56, #eb7c3c, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    font-family: 'Righteous', cursive;
+
 }
+
+/* body {
+    background-color:white;
+} */
 
 @keyframes gradient {
     0% {
@@ -24,10 +20,6 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
-#gradient {
-	 background-image: linear-gradient(to right, rgb(177, 157, 157), rgb(93, 93, 156));
 }
 
 select {
@@ -44,8 +36,138 @@ select {
 	background-color: green;
 }
 
+.card {
+    background-color: rgba(255, 255, 255, 0.502);
+    border: black solid 5px;
+
+
+}
+
+.btn {
+    background-color: black;
+    border: none;
+    color: white;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+}
+
+
+.card-header {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    background: linear-gradient(-45deg, #775e56, #eb7c3c, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-family: 'Righteous', cursive;
+    
+}
+
+
+/* ********************************************************************* */
+
+body {
+    background: #fbfbfd;
+}
+
+.new_footer_area {
+    background: #fbfbfd;
+}
+
+
+.new_footer_top {
+    padding: 100px 0px 200px;
+    position: relative;
+    overflow-x: hidden;
+}
+.new_footer_area .footer_bottom {
+    padding-top: 5px;
+    padding-bottom: 50px;
+}
+.footer_bottom {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #7f88a6;
+    padding: 27px 0px;
+}
+
+.new_footer_top .f-title {
+    margin-bottom: 30px;
+    color: #263b5e;
+}
+
+
+.new_footer_top .footer_bg {
+    position: absolute;
+    bottom: 0;
+    background: url("http://droitthemes.com/html/saasland/img/seo/footer_bg.png") no-repeat scroll center 0;
+    width: 100%;
+    height: 266px;
+}
+
+.new_footer_top .footer_bg .footer_bg_one {
+    background: url("https://1.bp.blogspot.com/-mvKUJFGEc-k/XclCOUSvCnI/AAAAAAAAUAE/jnBSf6Fe5_8tjjlKrunLBXwceSNvPcp3wCLcBGAsYHQ/s1600/volks.gif") no-repeat center center;
+    width: 330px;
+    height: 105px;
+    background-size:100%;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    -webkit-animation: myfirst 22s linear infinite;
+    animation: myfirst 22s linear infinite;
+}
+
+.new_footer_top .footer_bg .footer_bg_two {
+    background: url("https://1.bp.blogspot.com/-hjgfxUW1o1g/Xck--XOdlxI/AAAAAAAAT_4/JWYFJl83usgRFMvRfoKkSDGd--_Sv04UQCLcBGAsYHQ/s1600/cyclist.gif") no-repeat center center;
+    width: 88px;
+    height: 100px;
+    background-size:100%;
+    bottom: 0;
+    left: 38%;
+    position: absolute;
+    -webkit-animation: myfirst 30s linear infinite;
+    animation: myfirst 30s linear infinite;
+}
+
+
+
+@-moz-keyframes myfirst {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes myfirst {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes myfirst {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/*************footer End*****************/
+
+
 ul {
 	font-size: small;
 	text-align: left;
 	margin-left: -38px;
 }
+

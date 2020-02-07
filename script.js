@@ -1,3 +1,4 @@
+
 // =========================== AIRPORT FINDER API ===============================
 var theCity;
 
@@ -40,67 +41,65 @@ $("#airportBtn").on("click", function(event) {
 	});
 });
 
-// ======================================== WORLD TIME ZONE ============================================-=
+// ======================================== Currency converter API ============================================-=
 
-$("#clockSearchBtn").on("click", function(e) {
+function setTimezoneSettings(clockCountry, clockCity) {
+    return {
+        async: true,
+        crossDomain: true,
+        url:
+            "https://world-time2.p.rapidapi.com/timezone/" +
+            clockCountry +
+            "/" +
+            clockCity,
+        method: "GET",
+        headers: {
+            "x-rapidapi-host": "world-time2.p.rapidapi.com",
+            "x-rapidapi-key":
+                "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
+        }
+    };
+}
+
+
+$("#clockSearchBtn").on("click", function (e) {
     event.preventDefault();
-
-    // $('input[type="text"]').val("");
-
     var clockCountry = $("#clock-country").val();
-
     var clockCity = $("#clock-city").val();
-
     var timezoneSettings = setTimezoneSettings(clockCountry, clockCity);
 
     console.log(timezoneSettings.url);
 
-    $.ajax(timezoneSettings).done(function(response) {
+    $.ajax(timezoneSettings).done(function (response) {
         console.log("full response:", response.datetime);
-
         moment(response.datetime, "HH:mm:ss").format("hh:mm A");
 
-        var date = response.datetime;
-
         var $clockUl = $("<ul>");
-
         var $clockLi = $(
-          `<li class="list-unstyled text-secondary">${
+
+            `<li class="list-unstyled text-secondary">${
             response.timezone
-          }</li><li class="list-unstyled text-secondary">${
-            // moment().format(date)
+            }</li><li class="list-unstyled text-secondary>${
+            (moment(response.datetime.substring(0, response.datetime.length - 13)).format('MMMM Do YYYY, h:mm:ss a'))
+            }</li>`
+      
+            
 
-            // var date = response.datetime;
+           
 
-            response.datetime
+           
 
-            // .format(
-
-            //  "dddd, MMMM Do YYYY, h:mm:ss a"
-
-            // )
-
-            // .utc()
-
-            // .format("dddd, MMMM Do YYYY, h:mm a")
-          }</li>`
         );
-
-        console.log(
-            moment(response.datetime, "HH:mm:ss").format("hh:mm A")
-
-            // .utc()
-
-            // .format()
-        );
+        // console.log(
+        //     moment(response.datetime, "HH:mm:ss").format("hh:mm A")
+        // );
 
         $clockLi.appendTo($clockUl);
-
         $clockUl.appendTo("#clockZones");
     });
 });
 
-// ======================================== CURRENCY CONVERTER API ============================================-=
+
 
 var amount;
 
@@ -116,17 +115,19 @@ $("#convertBtn").on("click", function(event) {
     async: true,
     crossDomain: true,
     url:
-      "https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=" +
-      cur1 +
-      "&to=" +
-      cur2 +
-      "&amount=" +
-      amount,
+        "https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=" +
+        cur1 +
+        "&to=" +
+        cur2 +
+        "&amount=" +
+        amount,
     method: "GET",
     headers: {
-      "x-rapidapi-host": "currency-converter5.p.rapidapi.com",
-      "x-rapidapi-key": "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
+        "x-rapidapi-host": "currency-converter5.p.rapidapi.com",
+        "x-rapidapi-key": "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
     }
+
+
   };
 		$.ajax(settings).done(function(response) {
 		console.log(response);
@@ -145,5 +146,8 @@ $("#convertBtn").on("click", function(event) {
 });
 // =========================================================================================
 
+$("#convertBtn").on("click", function () { });
 
-
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
