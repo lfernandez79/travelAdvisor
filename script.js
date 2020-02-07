@@ -105,6 +105,7 @@ $("#clockSearchBtn").on("click", function(e) {
 var amount;
 
 // BUTTON TO CONVERT CURRENCY, GRAB HTML IDs IN VARIABLES TO BE USE LATER =========================================
+
 $("#convertBtn").on("click", function(event) {
 	var cur1 = $("#first-currency").val();
     var cur2 = $("#second-currency").val();
@@ -129,7 +130,19 @@ $("#convertBtn").on("click", function(event) {
   };
 		$.ajax(settings).done(function(response) {
 		console.log(response);
+
+			var $moneyUl = $("<ul>");
+			var $moneyli = $(`<li class="text-info">${response.rates[cur2].rate_for_amount}</li>`)
+		
+			console.log(response.rates[cur2].rate_for_amount);
+
+			$moneyli.appendTo($moneyUl);
+			$moneyUl.appendTo("#currencyConv");
 		});
+			
+		
+
+		
 	console.log(amount);
 });
 // =========================================================================================
