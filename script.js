@@ -104,24 +104,14 @@ $("#clockSearchBtn").on("click", function(e) {
 // ======================================== CURRENCY CONVERTER API ============================================-=
 
 var amount;
-// cur1 = EUR;
-// cur2 = CAD;
-// var settings = {
-// 	async: true,
-// 	crossDomain: true,
-// 	url:"https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=" + cur1 + "&to=" + cur2 + "&amount=" + amount,
-// 	method: "GET",
-// 	headers: {
-// 		"x-rapidapi-host": "currency-converter5.p.rapidapi.com",
-// 		"x-rapidapi-key": "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
-// 	}
-// };
 
+// BUTTON TO CONVERT CURRENCY, GRAB HTML IDs IN VARIABLES TO BE USE LATER =========================================
 $("#convertBtn").on("click", function(event) {
 	var cur1 = $("#first-currency").val();
     var cur2 = $("#second-currency").val();
 	amount = $("#currency-amount").val();
 
+	// AJAX CALL TO URL, CUR1, CUR2 TAKE ANY VALUE SELECTED ON THE HTML PAGE ===================
 	var settings = {
     async: true,
     crossDomain: true,
@@ -143,7 +133,7 @@ $("#convertBtn").on("click", function(event) {
 		});
 	console.log(amount);
 });
-
+// =========================================================================================
 
 
 
