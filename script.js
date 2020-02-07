@@ -1,4 +1,4 @@
-
+// =========================== AIRPORT FINDER API ===============================
 var theCity;
 
 // BUTTON GRAB VALUE FROM INPUT #CITYNAME
@@ -99,7 +99,6 @@ $("#clockSearchBtn").on("click", function(e) {
         $clockUl.appendTo("#clockZones");
     });
 });
-
 
 // ======================================== CURRENCY CONVERTER API ============================================-=
 
