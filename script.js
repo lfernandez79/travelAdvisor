@@ -41,7 +41,7 @@ $("#airportBtn").on("click", function(event) {
 	});
 });
 
-// ======================================== Currency converter API ============================================-=
+// ======================================== TIME ZONE API ============================================-=
 
 function setTimezoneSettings(clockCountry, clockCity) {
     return {
@@ -75,31 +75,21 @@ $("#clockSearchBtn").on("click", function (e) {
         moment(response.datetime, "HH:mm:ss").format("hh:mm A");
 
         var $clockUl = $("<ul>");
-        var $clockLi = $(
-
-            `<li class="list-unstyled text-secondary">${
-            response.timezone
-            }</li><li class="list-unstyled text-secondary>${
-            (moment(response.datetime.substring(0, response.datetime.length - 13)).format('MMMM Do YYYY, h:mm:ss a'))
-            }</li>`
-      
-            
-
-           
-
-           
-
+        var $clockLi = $(`<li class="list-unstyled text-secondary">${response.timezone}</li><p>${
+            (moment(response.datetime.substring(0, response.datetime.length - 13)).format('MMMM Do YYYY, h:mm:ss a'))}</p>`);
+			
+        console.log(
+          moment(
+            response.datetime.substring(0, response.datetime.length - 13)
+          ).format("MMMM Do YYYY, h:mm:ss a")
         );
-        // console.log(
-        //     moment(response.datetime, "HH:mm:ss").format("hh:mm A")
-        // );
 
         $clockLi.appendTo($clockUl);
         $clockUl.appendTo("#clockZones");
     });
 });
 
-
+// ======================================= CURRENCY CONVERSION API ============================================================
 
 var amount;
 
@@ -111,7 +101,7 @@ $("#convertBtn").on("click", function(event) {
 	amount = $("#currency-amount").val();
 
 	// AJAX CALL TO URL, CUR1, CUR2 TAKE ANY VALUE SELECTED ON THE HTML PAGE ===================
-	var settings = {
+	var covSettings = {
     async: true,
     crossDomain: true,
     url:
@@ -129,12 +119,20 @@ $("#convertBtn").on("click", function(event) {
 
 
   };
-		$.ajax(settings).done(function(response) {
+		$.ajax(covSettings).done(function(response) {
 		console.log(response);
 
 			var $moneyUl = $("<ul>");
-			var $moneyli = $(`<li class="list-unstyled text-secondary">${response.rates[cur2].rate_for_amount}</li>`
-      );
+			
+			// Converted a string into a float.
+			var rate = response.rates[cur2].rate_for_amount;
+			var parseRate = parseFloat(rate).toFixed(2)
+			var rate2 = response.rates[cur2].rate;
+			var parseRate2 = parseFloat(rate2).toFixed(2)
+
+			var $moneyli = $(`<li class="list-unstyled text-seconday">${"Currency Name: " + response.rates[cur2].currency_name}</li>
+			<li class="list-unstyled text-secondary">${"Rate amount: " + "$" + parseRate}</li>
+			<li class="list-unstyled text-secondary">${"Rate per unit: " + "$" + parseRate2}</li>`);
 		
 			console.log(response.rates[cur2].rate_for_amount);
 
@@ -144,10 +142,4 @@ $("#convertBtn").on("click", function(event) {
 		
 	console.log(amount);
 });
-// =========================================================================================
 
-$("#convertBtn").on("click", function () { });
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
