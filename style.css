@@ -43,3 +43,9 @@ select {
 #convertBtn:hover {
 	background-color: green;
 }
+
+ul {
+	font-size: small;
+	text-align: left;
+	margin-left: -38px;
+}
