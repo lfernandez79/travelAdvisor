@@ -37,9 +37,6 @@ $("#airportBtn").on("click", function(event) {
 		// APPENDTO PAGE
 		$newUl.appendTo("#airportNames");
 
-		// $.ajax(settings).done(function(response) {
-		// 	console.log(response);
-		// });
 	});
 });
 
@@ -105,29 +102,48 @@ $("#clockSearchBtn").on("click", function(e) {
 
 
 // ======================================== CURRENCY CONVERTER API ============================================-=
-var cur1 = $("#first-currency").val();
-var cur2 = $("#second-currency").val();
+
 var amount;
 // cur1 = EUR;
 // cur2 = CAD;
-var settings = {
-	async: true,
-	crossDomain: true,
-	url:"https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=" + cur1 + "&to=" + cur2 + "&amount=" + amount,
-	method: "GET",
-	headers: {
-		"x-rapidapi-host": "currency-converter5.p.rapidapi.com",
-		"x-rapidapi-key": "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
-	}
-};
+// var settings = {
+// 	async: true,
+// 	crossDomain: true,
+// 	url:"https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=" + cur1 + "&to=" + cur2 + "&amount=" + amount,
+// 	method: "GET",
+// 	headers: {
+// 		"x-rapidapi-host": "currency-converter5.p.rapidapi.com",
+// 		"x-rapidapi-key": "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
+// 	}
+// };
 
 $("#convertBtn").on("click", function(event) {
+	var cur1 = $("#first-currency").val();
+    var cur2 = $("#second-currency").val();
 	amount = $("#currency-amount").val();
+
+	var settings = {
+    async: true,
+    crossDomain: true,
+    url:
+      "https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=" +
+      cur1 +
+      "&to=" +
+      cur2 +
+      "&amount=" +
+      amount,
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "currency-converter5.p.rapidapi.com",
+      "x-rapidapi-key": "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
+    }
+  };
+		$.ajax(settings).done(function(response) {
+		console.log(response);
+		});
 	console.log(amount);
 });
 
 
 
-$.ajax(settings).done(function(response) {
-	console.log(response);
-});
+
