@@ -1,9 +1,9 @@
-
+// =========================== AIRPORT FINDER API ===============================
 var theCity;
 
 // BUTTON GRAB VALUE FROM INPUT #CITYNAME
 $("#airportBtn").on("click", function(event) {
-	// event.preventDefault();
+	event.preventDefault();
 	$("ul").empty();
 	theCity = $("#cityName").val();
 
@@ -29,7 +29,7 @@ $("#airportBtn").on("click", function(event) {
 		response.forEach(airport => {
 			// CREATE LIs TO GRAB INFO FROM ARRAY AND APPENTO UL
 			var $newLi = $(
-				`<li class="text-info">${airport.name} / ${airport.code}</li>`
+				`<li class="list-unstyled text-seconday">${airport.name} / ${airport.code}</li>`
 			);
 
 			$newLi.appendTo($newUl);
@@ -65,25 +65,25 @@ $("#clockSearchBtn").on("click", function(e) {
         var $clockUl = $("<ul>");
 
         var $clockLi = $(
-            `<li class="text-info">${
-                response.timezone
-            }</li><li class="text-info">${
-                // moment().format(date)
+          `<li class="list-unstyled text-secondary">${
+            response.timezone
+          }</li><li class="list-unstyled text-secondary">${
+            // moment().format(date)
 
-                // var date = response.datetime;
+            // var date = response.datetime;
 
-                response.datetime
+            response.datetime
 
-                // .format(
+            // .format(
 
-                //  "dddd, MMMM Do YYYY, h:mm:ss a"
+            //  "dddd, MMMM Do YYYY, h:mm:ss a"
 
-                // )
+            // )
 
-                // .utc()
+            // .utc()
 
-                // .format("dddd, MMMM Do YYYY, h:mm a")
-            }</li>`
+            // .format("dddd, MMMM Do YYYY, h:mm a")
+          }</li>`
         );
 
         console.log(
@@ -100,12 +100,12 @@ $("#clockSearchBtn").on("click", function(e) {
     });
 });
 
-
 // ======================================== CURRENCY CONVERTER API ============================================-=
 
 var amount;
 
 // BUTTON TO CONVERT CURRENCY, GRAB HTML IDs IN VARIABLES TO BE USE LATER =========================================
+
 $("#convertBtn").on("click", function(event) {
 	var cur1 = $("#first-currency").val();
     var cur2 = $("#second-currency").val();
@@ -130,7 +130,17 @@ $("#convertBtn").on("click", function(event) {
   };
 		$.ajax(settings).done(function(response) {
 		console.log(response);
+
+			var $moneyUl = $("<ul>");
+			var $moneyli = $(`<li class="list-unstyled text-secondary">${response.rates[cur2].rate_for_amount}</li>`
+      );
+		
+			console.log(response.rates[cur2].rate_for_amount);
+
+			$moneyli.appendTo($moneyUl);
+			$moneyUl.appendTo("#currencyConv");
 		});
+		
 	console.log(amount);
 });
 // =========================================================================================
