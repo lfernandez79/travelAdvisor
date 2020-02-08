@@ -3,6 +3,7 @@
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     font-family: 'Righteous', cursive;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
@@ -39,6 +40,7 @@ select {
 .card {
     background-color: rgba(255, 255, 255, 0.502);
     border: black solid 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
 }
