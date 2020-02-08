@@ -68,7 +68,7 @@ $("#clockSearchBtn").on("click", function (e) {
     var clockCity = $("#clock-city").val();
     var timezoneSettings = setTimezoneSettings(clockCountry, clockCity);
 
-    console.log(setimezoneSettings.url);
+    // console.log(setimezoneSettings.url);
 
     $.ajax(timezoneSettings).done(function (response) {
         console.log("full response:", response.datetime);
@@ -79,9 +79,9 @@ $("#clockSearchBtn").on("click", function (e) {
 
             `<li class="list-unstyled text-secondary">${
             response.timezone
-            }</li><li class="list-unstyled text-secondary>${
+            }</li><p>${
             (moment(response.datetime.substring(0, response.datetime.length - 13)).format('MMMM Do YYYY, h:mm:ss a'))
-            }</li>`
+            }</p>`
 
         );
 
