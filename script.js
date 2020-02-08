@@ -6,9 +6,10 @@ var theCity;
 $("#airportBtn").on("click", function(event) {
 	event.preventDefault();
 	$("ul").empty();
-	theCity = $("#cityName").val();
+    theCity = $("#cityName").val();
+    
 
-	// AJAX CALL ==========================================
+	// AJAX CALL 
 	var settings = {
 		async: true,
 		crossDomain: true,
@@ -100,7 +101,7 @@ $("#convertBtn").on("click", function(event) {
     var cur2 = $("#second-currency").val();
 	amount = $("#currency-amount").val();
 
-	// AJAX CALL TO URL, CUR1, CUR2 TAKE ANY VALUE SELECTED ON THE HTML PAGE ===================
+	// AJAX CALL TO URL, CUR1, CUR2 TAKE ANY VALUE SELECTED ON THE HTML PAGE
 	var covSettings = {
     async: true,
     crossDomain: true,
@@ -130,9 +131,9 @@ $("#convertBtn").on("click", function(event) {
 			var rate2 = response.rates[cur2].rate;
 			var parseRate2 = parseFloat(rate2).toFixed(2)
 
-			var $moneyli = $(`<li class="list-unstyled text-seconday">${"Currency Name: " + response.rates[cur2].currency_name}</li>
-			<li class="list-unstyled text-secondary">${"Rate amount: " + "$" + parseRate}</li>
-			<li class="list-unstyled text-secondary">${"Rate per unit: " + "$" + parseRate2}</li>`);
+			var $moneyli = $(`<li class="list-unstyled text-seconday mt-2">${"Currency Name: " + response.rates[cur2].currency_name}</li>
+								<li class="list-unstyled text-secondary">${"Rate amount: " + "$" + parseRate}</li>
+								<li class="list-unstyled text-secondary">${"Rate per unit: " + "$" + parseRate2}</li>`);
 		
 			console.log(response.rates[cur2].rate_for_amount);
 
