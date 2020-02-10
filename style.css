@@ -30,7 +30,7 @@ select {
 #convertBtn {
 	background-color: lightblue;
 	color: black;
-	border: none;
+    border: none;
 }
 
 #convertBtn:hover {
@@ -67,6 +67,10 @@ select {
     animation: gradient 12s ease infinite;
     font-family: 'Righteous', cursive;
     
+}
+
+#currency-amount {
+    margin-left: 10px;
 }
 
 
