@@ -27,3 +27,9 @@ GIVEN a application to select two currencies and select a value
 WHEN I select two currencies to compare
 THEN I am presented with the currency exchange rate and new value for the amount that was entered.
 
+The following image shows a preview of the template:
+
+![Travel Advisor Preview](./airPlane/preview.png)
+
+
+
