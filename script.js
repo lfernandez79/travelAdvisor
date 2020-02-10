@@ -3,6 +3,7 @@
 var theCity;
 
 // BUTTON GRAB VALUE FROM INPUT #CITYNAME
+
 $("#airportBtn").on("click", function(event) {
 	event.preventDefault();
 	$("ul").empty();
@@ -40,6 +41,7 @@ $("#airportBtn").on("click", function(event) {
 		$newUl.appendTo("#airportNames");
 
 	});
+
 });
 
 // ======================================== TIME ZONE API ============================================-=
@@ -69,13 +71,14 @@ $("#clockSearchBtn").on("click", function (e) {
     var clockCity = $("#clock-city").val();
     var timezoneSettings = setTimezoneSettings(clockCountry, clockCity);
 
-    console.log(timezoneSettings.url);
+    // console.log(setimezoneSettings.url);
 
     $.ajax(timezoneSettings).done(function (response) {
         console.log("full response:", response.datetime);
         moment(response.datetime, "HH:mm:ss").format("hh:mm A");
 
         var $clockUl = $("<ul>");
+
         var $clockLi = $(`<li class="text-secondary font-weight-bold">${response.timezone}</li>
         <p class="text-info font-weight-bold">${(moment(response.datetime.substring(0, response.datetime.length - 13)).format('MMMM Do YYYY, h:mm:ss a'))}</p>`);
 			
@@ -83,6 +86,8 @@ $("#clockSearchBtn").on("click", function (e) {
           moment(
             response.datetime.substring(0, response.datetime.length - 13)
           ).format("MMMM Do YYYY, h:mm:ss a")
+        
+
         );
 
         $clockLi.appendTo($clockUl);
@@ -96,9 +101,10 @@ var amount;
 
 // BUTTON TO CONVERT CURRENCY, GRAB HTML IDs IN VARIABLES TO BE USE LATER =========================================
 
-$("#convertBtn").on("click", function(event) {
-	var cur1 = $("#first-currency").val();
+$("#convertBtn").on("click", function (event) {
+    var cur1 = $("#first-currency").val();
     var cur2 = $("#second-currency").val();
+
 	amount = $("#currency-amount").val();
 
 	// AJAX CALL TO URL, CUR1, CUR2 TAKE ANY VALUE SELECTED ON THE HTML PAGE
@@ -142,5 +148,6 @@ $("#convertBtn").on("click", function(event) {
 		});
 		
 	console.log(amount);
+
 });
 
