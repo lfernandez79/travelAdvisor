@@ -1,8 +1,9 @@
 .jumbotron {
-    background: linear-gradient(-45deg, #775e56, #eb7c3c, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #775e56, #d8964b, #23a6d5, #23d5ab, rgb(175, 238, 27));
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 12s ease infinite;
     font-family: 'Righteous', cursive;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
@@ -33,12 +34,14 @@ select {
 }
 
 #convertBtn:hover {
-	background-color: green;
+    background-color: green;
+    
 }
 
 .card {
     background-color: rgba(255, 255, 255, 0.502);
     border: black solid 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
 }
@@ -59,9 +62,9 @@ select {
     text-align: center;
     color: black;
     font-size: 20px;
-    background: linear-gradient(-45deg, #775e56, #eb7c3c, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #775e56, #eb7c3c, #23a6d5, #23d5ab, rgb(175, 238, 27));
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 12s ease infinite;
     font-family: 'Righteous', cursive;
     
 }
@@ -70,11 +73,11 @@ select {
 /* ********************************************************************* */
 
 body {
-    background: #fbfbfd;
+    background: white;
 }
 
 .new_footer_area {
-    background: #fbfbfd;
+    background: white;
 }
 
 
@@ -166,7 +169,7 @@ body {
 
 
 ul {
-	font-size: small;
+	font-size: 16px;
 	text-align: left;
 	margin-left: -38px;
 }
