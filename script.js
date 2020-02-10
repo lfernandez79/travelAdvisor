@@ -31,7 +31,7 @@ $("#airportBtn").on("click", function(event) {
 		response.forEach(airport => {
 			// CREATE LIs TO GRAB INFO FROM ARRAY AND APPENTO UL
 			var $newLi = $(
-				`<li class="list-unstyled text-info">${airport.name} / ${airport.code}</li>`
+				`<li class="list-unstyled text-info font-weight-bold">${airport.name} / ${airport.code}</li>`
 			);
 
 			$newLi.appendTo($newUl);
@@ -76,8 +76,8 @@ $("#clockSearchBtn").on("click", function (e) {
         moment(response.datetime, "HH:mm:ss").format("hh:mm A");
 
         var $clockUl = $("<ul>");
-        var $clockLi = $(`<li class="text-secondary">${response.timezone}</li>
-        <p class="text-info">${(moment(response.datetime.substring(0, response.datetime.length - 13)).format('MMMM Do YYYY, h:mm:ss a'))}</p>`);
+        var $clockLi = $(`<li class="text-secondary font-weight-bold">${response.timezone}</li>
+        <p class="text-info font-weight-bold">${(moment(response.datetime.substring(0, response.datetime.length - 13)).format('MMMM Do YYYY, h:mm:ss a'))}</p>`);
 			
         console.log(
           moment(
@@ -131,9 +131,9 @@ $("#convertBtn").on("click", function(event) {
 			var rate2 = response.rates[cur2].rate;
 			var parseRate2 = parseFloat(rate2).toFixed(2)
 
-			var $moneyli = $(`<li class="list-unstyled text-info">${"Currency Name: " + response.rates[cur2].currency_name}</li>
-								<li class="list-unstyled text-info">${"Rate amount: " + "$" + parseRate}</li>
-								<li class="list-unstyled text-info">${"Rate per unit: " + "$" + parseRate2}</li>`);
+            var $moneyli = $(`<li class="list-unstyled text-info font-weight-bold">${"Currency Name: " + response.rates[cur2].currency_name}</li>
+								<li class="list-unstyled text-info font-weight-bold">${"Rate amount: " + "$" + parseRate}</li>
+								<li class="list-unstyled text-info font-weight-bold">${"Rate per unit: " + "$" + parseRate2}</li>`);
 		
 			console.log(response.rates[cur2].rate_for_amount);
 
