@@ -8,19 +8,17 @@ $("#airportBtn").on("click", function (event) {
     event.preventDefault();
     $("ul").empty();
     theCity = $("#cityName").val();
-
-
+    
     // AJAX CALL 
     var settings = {
         async: true,
         crossDomain: true,
         url:
-            "https://cors-anywhere.herokuapp.com/https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-text?text=" + theCity,
+            "https://airport-info.p.rapidapi.com/airport?iata=" + theCity,
         method: "GET",
         headers: {
-            "x-rapidapi-host": "cometari-airportsfinder-v1.p.rapidapi.com",
-            "x-rapidapi-key":
-                "912f8882abmsh597d3316e2e61bcp121db1jsnabc830ace42d"
+            "x-rapidapi-host": "airport-info.p.rapidapi.com",
+            "x-rapidapi-key": "912f8882abmsh597d3316e2e61bcp121db1jsnabc830ace42d"
         }
     };
     $.ajax(settings).done(function (response) {
@@ -28,20 +26,19 @@ $("#airportBtn").on("click", function (event) {
 
         // CREATE A UL TO APPEND LIs UNDER, LATER
         var $newUl = $("<ul>");
-
-        response.forEach(airport => {
+        
             // CREATE LIs TO GRAB INFO FROM ARRAY AND APPENTO UL
             var $newLi = $(
-                `<li class="list-unstyled text-info font-weight-bold">${airport.name} / ${airport.code}</li>`
+                `<li class="list-unstyled text-regular font-weight-normal">Name: ${response.name},</li>
+                <li class="list-unstyled text-regular font-weight-normal">Address: ${response.street_number}</li>
+                <li class="list-unstyled text-regular font-weight-normal">Street: ${response.street}</li>
+                <li class="list-unstyled text-regular font-weight-normal">City: ${response.city}</li>
+                <li class="list-unstyled text-regular font-weight-normal">URL: ${response.website}</li>`
             );
-
             $newLi.appendTo($newUl);
-        });
         // APPENDTO PAGE
         $newUl.appendTo("#airportNames");
-
     });
-
 });
 
 // ======================================== TIME ZONE API ============================================-=
@@ -64,9 +61,8 @@ function setTimezoneSettings(clockCountry, clockCity) {
     };
 }
 
-
 $("#clockSearchBtn").on("click", function (e) {
-    event.preventDefault();
+    e.preventDefault();
     var clockCountry = $("#clock-country").val();
     var clockCity = $("#clock-city").val();
     var timezoneSettings = setTimezoneSettings(clockCountry, clockCity);
@@ -76,19 +72,16 @@ $("#clockSearchBtn").on("click", function (e) {
     $.ajax(timezoneSettings).done(function (response) {
         console.log("full response:", response.datetime);
         moment(response.datetime, "HH:mm:ss").format("hh:mm A");
-
         var $clockUl = $("<ul>");
+        
+        var $clockLi = $(`<li class="text-secondary font-weight-bold">
+            ${response.timezone}</li>
+            <p class="text-info font-weight-bold">
+            ${(moment(response.datetime.substring(0, response.datetime.length - 13))
+                .format('MMMM Do YYYY, h:mm:ss a'))}
+                </p>`);
 
-        var $clockLi = $(`<li class="text-secondary font-weight-bold">${response.timezone}</li>
-        <p class="text-info font-weight-bold">${(moment(response.datetime.substring(0, response.datetime.length - 13)).format('MMMM Do YYYY, h:mm:ss a'))}</p>`);
-
-        console.log(
-            moment(
-                response.datetime.substring(0, response.datetime.length - 13)
-            ).format("MMMM Do YYYY, h:mm:ss a")
-
-
-        );
+        console.log(moment(response.datetime.substring(0, response.datetime.length - 13)).format("MMMM Do YYYY, h:mm:ss a"));
 
         $clockLi.appendTo($clockUl);
         $clockUl.appendTo("#clockZones");
@@ -118,14 +111,13 @@ $("#convertBtn").on("click", function (event) {
             cur2 +
             "&amount=" +
             amount,
-        method: "GET",
-        headers: {
+            method: "GET",
+            headers: {
             "x-rapidapi-host": "currency-converter5.p.rapidapi.com",
             "x-rapidapi-key": "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
-        }
-
-
-    };
+            }
+        };
+    
     $.ajax(covSettings).done(function (response) {
         console.log(response);
 
@@ -138,8 +130,8 @@ $("#convertBtn").on("click", function (event) {
         var parseRate2 = parseFloat(rate2).toFixed(2)
 
         var $moneyli = $(`<li class="list-unstyled text-info font-weight-bold">${"Currency Name: " + response.rates[cur2].currency_name}</li>
-								<li class="list-unstyled text-info font-weight-bold">${"Rate amount: " + "$" + parseRate}</li>
-								<li class="list-unstyled text-info font-weight-bold">${"Rate per unit: " + "$" + parseRate2}</li>`);
+						<li class="list-unstyled text-info font-weight-bold">${"Rate amount: " + "$" + parseRate}</li>
+						<li class="list-unstyled text-info font-weight-bold">${"Rate per unit: " + "$" + parseRate2}</li>`);
 
         console.log(response.rates[cur2].rate_for_amount);
 
@@ -148,6 +140,5 @@ $("#convertBtn").on("click", function (event) {
     });
 
     console.log(amount);
-
 });
 
