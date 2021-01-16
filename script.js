@@ -8,7 +8,7 @@ $("#airportBtn").on("click", function (event) {
     event.preventDefault();
     $("ul").empty();
     theCity = $("#cityName").val();
-    
+
     // AJAX CALL 
     var settings = {
         async: true,
@@ -26,16 +26,16 @@ $("#airportBtn").on("click", function (event) {
 
         // CREATE A UL TO APPEND LIs UNDER, LATER
         var $newUl = $("<ul>");
-        
-            // CREATE LIs TO GRAB INFO FROM ARRAY AND APPENTO UL
-            var $newLi = $(
-                `<li class="list-unstyled text-regular font-weight-normal">Name: ${response.name},</li>
-                <li class="list-unstyled text-regular font-weight-normal">Address: ${response.street_number}</li>
-                <li class="list-unstyled text-regular font-weight-normal">Street: ${response.street}</li>
-                <li class="list-unstyled text-regular font-weight-normal">City: ${response.city}</li>
-                <li class="list-unstyled text-regular font-weight-normal">URL: ${response.website}</li>`
-            );
-            $newLi.appendTo($newUl);
+
+        // CREATE LIs TO GRAB INFO FROM ARRAY AND APPENTO UL
+        var $newLi = $(
+            `<li class="list-unstyled text-regular font-weight-normal">Name: ${response.name},</li>
+                <li class="list-unstyled text-info font-weight-bold">Address: ${response.street_number}</li>
+                <li class="list-unstyled text-info font-weight-bold">Street: ${response.street}</li>
+                <li class="list-unstyled text-info font-weight-bold">City: ${response.city}</li>
+                <li class="list-unstyled text-info font-weight-bold">URL: ${response.website}</li>`
+        );
+        $newLi.appendTo($newUl);
         // APPENDTO PAGE
         $newUl.appendTo("#airportNames");
     });
@@ -55,8 +55,7 @@ function setTimezoneSettings(clockCountry, clockCity) {
         method: "GET",
         headers: {
             "x-rapidapi-host": "world-time2.p.rapidapi.com",
-            "x-rapidapi-key":
-                "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
+            "x-rapidapi-key": "912f8882abmsh597d3316e2e61bcp121db1jsnabc830ace42d"
         }
     };
 }
@@ -72,14 +71,13 @@ $("#clockSearchBtn").on("click", function (e) {
     $.ajax(timezoneSettings).done(function (response) {
         console.log("full response:", response.datetime);
         moment(response.datetime, "HH:mm:ss").format("hh:mm A");
+
         var $clockUl = $("<ul>");
-        
-        var $clockLi = $(`<li class="text-secondary font-weight-bold">
-            ${response.timezone}</li>
+        var $clockLi = $(`<li class="list-unstyled text-regular font-weight-normal">${response.timezone}</li>
             <p class="text-info font-weight-bold">
             ${(moment(response.datetime.substring(0, response.datetime.length - 13))
                 .format('MMMM Do YYYY, h:mm:ss a'))}
-                </p>`);
+            </p>`);
 
         console.log(moment(response.datetime.substring(0, response.datetime.length - 13)).format("MMMM Do YYYY, h:mm:ss a"));
 
@@ -111,13 +109,13 @@ $("#convertBtn").on("click", function (event) {
             cur2 +
             "&amount=" +
             amount,
-            method: "GET",
-            headers: {
+        method: "GET",
+        headers: {
             "x-rapidapi-host": "currency-converter5.p.rapidapi.com",
             "x-rapidapi-key": "d8e913d88bmsha569ef019d6165fp17314bjsnebbde91b52f7"
-            }
-        };
-    
+        }
+    };
+
     $.ajax(covSettings).done(function (response) {
         console.log(response);
 
@@ -129,9 +127,12 @@ $("#convertBtn").on("click", function (event) {
         var rate2 = response.rates[cur2].rate;
         var parseRate2 = parseFloat(rate2).toFixed(2)
 
-        var $moneyli = $(`<li class="list-unstyled text-info font-weight-bold">${"Currency Name: " + response.rates[cur2].currency_name}</li>
-						<li class="list-unstyled text-info font-weight-bold">${"Rate amount: " + "$" + parseRate}</li>
-						<li class="list-unstyled text-info font-weight-bold">${"Rate per unit: " + "$" + parseRate2}</li>`);
+        var $moneyli = $(`<li class="list-unstyled text-regular font-weight-normal">
+            ${"Currency Name: " + response.rates[cur2].currency_name}</li>
+            <li class="list-unstyled text-info font-weight-bold">
+            ${"Rate per unit: " + "$" + parseRate2}</li>                
+            <li class="list-unstyled text-info font-weight-bold">
+            ${"Rate amount: " + "$" + parseRate}</li>`);
 
         console.log(response.rates[cur2].rate_for_amount);
 
