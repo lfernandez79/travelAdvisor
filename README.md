@@ -1,14 +1,16 @@
 # Project 1 - Travel Advisor
 
-Developers are often tasked with retrieving data from another API application for their own purposes.  
+Developers are often tasked with retrieving data from another API application for their own purposes. 
+
+[Try it](https://lfernandez79.github.io/project1/)
 
 Below are the following API's used to retrieve airports, timezones, and currency exchange rates:
 
-1. https://rapidapi.com/cometari/api/airportsfinder?endpoint=57ac4d9be4b02b08ce774cc3
+1. [Airport](https://airport-info.p.rapidapi.com/airport?iata=) 
 
-2. https://rapidapi.com/brianiswu/api/world-time2
+2. [WorldTime](https://rapidapi.com/brianiswu/api/world-time2)
 
-3. https://rapidapi.com/natkapral/api/currency-converter5
+3. [Currency](https://rapidapi.com/natkapral/api/currency-converter5)
 
 
 ## User Story
