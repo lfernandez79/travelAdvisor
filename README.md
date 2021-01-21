@@ -1,6 +1,5 @@
 # Travel Advisor
 ![](https://img.shields.io/badge/JavaScript-JS-blue)
-![](https://img.shields.io/badge/jQuery-%24()-red)
 ![GitHub top language](https://img.shields.io/github/languages/top/lfernandez79/travelAdvisor?color=yellow&label=jQuery&logo=jquery)
 
 Developers are often tasked with retrieving data from another API application for their own purposes. 
