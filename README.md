@@ -1,8 +1,10 @@
-# Project 1 - Travel Advisor
+# Travel Advisor
+![](https://img.shields.io/badge/JavaScript-JS-blue)
+![](https://img.shields.io/badge/jQuery-%24()-red)
 
 Developers are often tasked with retrieving data from another API application for their own purposes. 
 
-[Try it](https://lfernandez79.github.io/travelAdvisor/)
+## [Try it](https://lfernandez79.github.io/travelAdvisor/)
 
 Below are the following API's used to retrieve airports, timezones, and currency exchange rates:
 
@@ -12,6 +14,8 @@ Below are the following API's used to retrieve airports, timezones, and currency
 
 3. [Currency](https://rapidapi.com/natkapral/api/currency-converter5)
 
+## Technology
+**HTML, CSS, JQuery, Bootstrap, REST API**
 
 ## User Story
 
@@ -32,6 +36,3 @@ THEN I am presented with the currency exchange rate and new value for the amount
 The following image shows a preview of the template:
 
 ![Travel Advisor Preview](./airPlane/preview.png)
-
-
-
