@@ -2,7 +2,7 @@
 
 Developers are often tasked with retrieving data from another API application for their own purposes. 
 
-[Try it](https://lfernandez79.github.io/project1/)
+[Try it](https://lfernandez79.github.io/travelAdvisor/)
 
 Below are the following API's used to retrieve airports, timezones, and currency exchange rates:
 
