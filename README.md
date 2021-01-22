@@ -2,8 +2,6 @@
 ![](https://img.shields.io/badge/JavaScript-JS-blue)
 ![GitHub top language](https://img.shields.io/github/languages/top/lfernandez79/travelAdvisor?color=yellow&label=jQuery&logo=jquery)
 
-Developers are often tasked with retrieving data from another API application for their own purposes. 
-
 ## [Try it](https://lfernandez79.github.io/travelAdvisor/)
 
 Below are the following API's used to retrieve airports, timezones, and currency exchange rates:
