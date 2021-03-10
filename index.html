@@ -8,9 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
             integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
             crossorigin="anonymous" />
@@ -43,7 +42,7 @@
                         </div>
                         <div id="airportNames" class="card-body">
                             <h5 class="card-title">Find all airports within a city.</h5>
-                            <input id="cityName" type="text" onfocus="this.value=''" placeholder="City code.." />
+                            <input id="cityName" class="placeholder" type="text" onfocus="this.value=''" placeholder="DFW" />
                             <button id="airportBtn" class="btn btn-outline-success my-2 my-sm-0 search" type="button">
                                 <i class="fas fa-search"></i></button>
 
@@ -57,8 +56,8 @@
                         <div class="card-header">World Time</div>
                         <div id="clockZones" class="card-body">
                             <h5 class="card-title">Enter in a city and country to get the current timezone.</h5>
-                            <input class="mb-3" id="clock-city" type="text" placeholder="City Name.." />
-                            <input id="clock-country" type="text" placeholder="Continent Name.." />
+                            <input class="placeholder mb-3" id="clock-city" type="text" placeholder="City Name.." />
+                            <input id="clock-country" class="placeholder" type="text" placeholder="Continent Name.." />
                             <button id="clockSearchBtn" class="btn btn-outline-success my-2 my-sm-0 search"
                                 type="button">
                                 <i class="fas fa-search"></i></button>
@@ -75,7 +74,7 @@
                             <h5 class="card-title">Select your currency from the dropdown menu to see the current
                                 exchange
                                 rate.</h5>
-                            <select id="first-currency" name="">
+                            <select id="first-currency" class="placeholder" name="">
                                 <option value="AUD">Australian Dolloar(AUD)</option>
                                 <option value="BGN">Bulgarian Lev(BGN)</option>
                                 <option value="BRL">Brazilian Real(BRL)</option>
@@ -111,7 +110,7 @@
                                 <option value="ZAR">South African Rand(ZAR)</option>
                             </select>
 
-                            <select id="second-currency" name="">
+                            <select id="second-currency" class="placeholder" name="">
                                 <option value="AUD">Australian Dolloar(AUD)</option>
                                 <option value="BGN">Bulgarian Lev(BGN)</option>
                                 <option value="BRL">Brazilian Real(BRL)</option>
