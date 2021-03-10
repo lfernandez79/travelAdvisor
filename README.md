@@ -10,7 +10,7 @@ As a frequent traveler, I want to be able to keep a dashboard that displayed on 
 
 Below are the following API's used to retrieve airports, timezones, and currency exchange rates:
 
-1. [Airport](https://airport-info.p.rapidapi.com/airport?iata=) 
+1. [AirportIX](https://rapidapi.com/neelers/api/airportix?endpoint=apiendpoint_5511f8b7-48cc-403f-b380-96e51d636282) 
 
 2. [WorldTime](https://rapidapi.com/brianiswu/api/world-time2)
 
