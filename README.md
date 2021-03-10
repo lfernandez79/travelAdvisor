@@ -2,7 +2,9 @@
 ![](https://img.shields.io/badge/JavaScript-JS-blue)
 ![GitHub top language](https://img.shields.io/github/languages/top/lfernandez79/travelAdvisor?color=yellow&label=jQuery&logo=jquery)
 
-Developers are often tasked with retrieving data from another API application for their own purposes. 
+## User Story
+
+As a frequent traveler, I want to be able to keep a dashboard that displayed on my phone or computer that allows me to look at airports located in different cities, the current timezone in a specified coutnry, and the exchange rate of currency between two countries.
 
 ## [Try it](https://lfernandez79.github.io/travelAdvisor/)
 
@@ -16,10 +18,6 @@ Below are the following API's used to retrieve airports, timezones, and currency
 
 ## Technology
 **HTML, CSS, JQuery, Bootstrap, REST API**
-
-## User Story
-
-As a frequent traveler, I want to be able to keep a dashboard that displayed on my phone or computer that allows me to look at airports located in different cities, the current timezone in a specified coutnry, and the exchange rate of currency between two countries.
 
 ## Acceptance Criteria
 
