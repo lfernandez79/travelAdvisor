@@ -45,9 +45,9 @@ $("#convertBtn").on("click", function (event) {
 
         var $moneyli = $(`<li class="list-unstyled text-regular font-weight-normal">
             ${"Currency Name: " + response.rates[cur2].currency_name}</li>
-            <li class="list-unstyled text-info font-weight-bold">
+            <li class="list-unstyled text-info font-weight-regular">
             ${"Rate per unit: " + "$" + parseRate2}</li>                
-            <li class="list-unstyled text-info font-weight-bold">
+            <li class="list-unstyled text-info font-weight-regular">
             ${"Rate amount: " + "$" + parseRate}</li>`);
 
         console.log(response.rates[cur2].rate_for_amount);

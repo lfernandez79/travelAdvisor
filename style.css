@@ -1,5 +1,5 @@
 .jumbotron {
-    background: linear-gradient(-45deg, #775e56, #d8964b, #23a6d5, #23d5ab, rgb(175, 238, 27));
+    background: linear-gradient(-45deg, #775e568c, #d8964b, #23a6d5, #23d5ab, rgb(175, 238, 27));
     background-size: 400% 400%;
     animation: gradient 12s ease infinite;
     font-family: 'Righteous', cursive;

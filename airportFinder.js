@@ -7,8 +7,8 @@ var theCity;
 $("#airportBtn").on("click", function (event) {
     event.preventDefault();
     $("ul").empty();
-   theCity = $("#cityName").val();
-
+    theCity = $("#cityName").val();
+    
     // AJAX CALL 
     var settings = {
         async: true,
