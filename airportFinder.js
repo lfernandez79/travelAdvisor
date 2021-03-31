@@ -18,7 +18,7 @@ $("#airportBtn").on("click", function (event) {
         headers: {
             "x-rapidapi-host": "airportix.p.rapidapi.com",
             "x-rapidapi-key": "912f8882abmsh597d3316e2e61bcp121db1jsnabc830ace42d"
-        }
+        },
     };
     $.ajax(settings).done(function (response) {
         console.log(response);
