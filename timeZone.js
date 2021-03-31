@@ -1,22 +1,5 @@
 // ======================================== TIME ZONE API ============================================-=
 
-// function setTimezoneSettings(clockCountry, clockCity) {
-//     return {
-//         async: true,
-//         crossDomain: true,
-//         url:
-//             "https://world-time2.p.rapidapi.com/timezone/" +
-//             clockCountry +
-//             "/" +
-//             clockCity,
-//         method: "GET",
-//         headers: {
-//             "x-rapidapi-host": "world-time2.p.rapidapi.com",
-//             "x-rapidapi-key": "912f8882abmsh597d3316e2e61bcp121db1jsnabc830ace42d"
-//         },
-//     };
-// }
-
 $("#clockSearchBtn").on("click", function(event) {
     event.preventDefault();
     $("ul").empty();
@@ -44,11 +27,11 @@ $("#clockSearchBtn").on("click", function(event) {
         var $clockUl = $("<ul>");
         var $clockLi = $(
             `<li class="list-unstyled text-regular font-weight-normal">
-                Timezone: ${response.timezone} ${response.abbreviation}</li>
+                Timezone: ${response.timezone}, ${response.abbreviation}</li>
             <li class="list-unstyled text-info font-weight-bold">
                 ${(moment(response.datetime.substring(0, response.datetime.length - 13)).format('MMMM Do YYYY, h:mm a'))}
             </li>`);
-
+        
         $clockLi.appendTo($clockUl);
         $clockUl.appendTo("#clockZones");
     });
