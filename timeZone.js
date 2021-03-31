@@ -19,6 +19,7 @@ function setTimezoneSettings(clockCountry, clockCity) {
 
 $("#clockSearchBtn").on("click", function (e) {
     e.preventDefault();
+    $("ul").empty();
     var clockCountry = $("#clock-country").val();
     var clockCity = $("#clock-city").val();
     var timezoneSettings = setTimezoneSettings(clockCountry, clockCity);
@@ -26,15 +27,14 @@ $("#clockSearchBtn").on("click", function (e) {
     // console.log(setimezoneSettings.url);
 
     $.ajax(timezoneSettings).done(function (response) {
-        console.log("full response:", response.datetime);
+        console.log(response);
         moment(response.datetime, "HH:mm:ss").format("hh:mm A");
 
         var $clockUl = $("<ul>");
-        var $clockLi = $(`<li class="list-unstyled text-regular font-weight-normal">${response.timezone}</li>
-            <p class="text-info font-weight-bold">
-            ${(moment(response.datetime.substring(0, response.datetime.length - 13))
-                .format('MMMM Do YYYY, h:mm:ss a'))}
-            </p>`);
+        var $clockLi = $(`<li class="list-unstyled text-regular font-weight-normal">Timezone: ${response.timezone} ${response.abbreviation}</li>
+            <li class="list-unstyled text-info font-weight-bold">
+            ${(moment(response.datetime.substring(0, response.datetime.length - 13)).format('MMMM Do YYYY, h:mm:ss a'))}
+            </li>`);
 
         console.log(moment(response.datetime.substring(0, response.datetime.length - 13)).format("MMMM Do YYYY, h:mm:ss a"));
 
