@@ -19,7 +19,7 @@ As a frequent traveler, I want to be able to keep a dashboard that displayed on 
 
 The following image shows a preview of the web app:
 
-<img src="airPlane/travelAdvisor.png" style="border-radius: 50% 10% / 10% 40%" width="400">
+<img src="airPlane/travelAdvisor.png" style="border-radius: 50% 10% / 10% 40%" width="70%">
 
 ### Below are the following API's used to retrieve airports, timezones, and currency exchange rates:
 
