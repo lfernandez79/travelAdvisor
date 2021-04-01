@@ -8,14 +8,6 @@ As a frequent traveler, I want to be able to keep a dashboard that displayed on 
 
 ## [Try it](https://lfernandez79.github.io/travelAdvisor/)
 
-Below are the following API's used to retrieve airports, timezones, and currency exchange rates:
-
-1. [AirportIX](https://rapidapi.com/neelers/api/airportix?endpoint=apiendpoint_5511f8b7-48cc-403f-b380-96e51d636282) 
-
-2. [WorldTime](https://rapidapi.com/brianiswu/api/world-time2)
-
-3. [Currency](https://rapidapi.com/natkapral/api/currency-converter5)
-
 ## Technology
 **HTML, CSS, JQuery, Bootstrap, REST API**
 
@@ -23,4 +15,12 @@ Below are the following API's used to retrieve airports, timezones, and currency
 
 The following image shows a preview of the web app:
 
-![Travel Advisor Preview](./airPlane/preview.png)
+<img src="airPlane/travelAdvisor.png" style="border-radius: 50% 10% / 10% 40%">
+
+### Below are the following API's used to retrieve airports, timezones, and currency exchange rates:
+
+1. [AirportIX](https://rapidapi.com/neelers/api/airportix?endpoint=apiendpoint_5511f8b7-48cc-403f-b380-96e51d636282) 
+
+2. [WorldTime](https://rapidapi.com/brianiswu/api/world-time2)
+
+3. [Currency](https://rapidapi.com/natkapral/api/currency-converter5)

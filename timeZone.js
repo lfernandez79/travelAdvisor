@@ -28,7 +28,7 @@ $("#clockSearchBtn").on("click", function(event) {
         var $clockLi = $(
             `<li class="list-unstyled font-weight-normal">
                 Timezone: ${response.timezone}, ${response.abbreviation}</li>
-            <li class="list-unstyled font-weight-bold">
+            <li class="list-unstyled font-weight-normal">
                 ${(moment(response.datetime.substring(0, response.datetime.length - 13)).format('MMMM Do YYYY, h:mm a'))}
             </li>`);
         
