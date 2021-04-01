@@ -9,9 +9,11 @@ var amount;
 // BUTTON TO CONVERT CURRENCY, GRAB HTML IDs IN VARIABLES TO BE USE LATER =========================================
 
 $("#convertBtn").on("click", function (event) {
+    event.preventDefault();
+    $("ul").empty();
+
     var cur1 = $("#first-currency").val();
     var cur2 = $("#second-currency").val();
-
     amount = $("#currency-amount").val();
 
     // AJAX CALL TO URL, CUR1, CUR2 TAKE ANY VALUE SELECTED ON THE HTML PAGE
@@ -43,11 +45,11 @@ $("#convertBtn").on("click", function (event) {
         var rate2 = response.rates[cur2].rate;
         var parseRate2 = parseFloat(rate2).toFixed(2)
 
-        var $moneyli = $(`<li class="list-unstyled text-regular font-weight-normal">
+        var $moneyli = $(`<li class="list-unstyled font-weight-normal">
             ${"Currency Name: " + response.rates[cur2].currency_name}</li>
-            <li class="list-unstyled text-info font-weight-regular">
+            <li class="list-unstyled font-weight-regular">
             ${"Rate per unit: " + "$" + parseRate2}</li>                
-            <li class="list-unstyled text-info font-weight-regular">
+            <li class="list-unstyled font-weight-regular">
             ${"Rate amount: " + "$" + parseRate}</li>`);
 
         console.log(response.rates[cur2].rate_for_amount);

@@ -29,8 +29,8 @@ $("#airportBtn").on("click", function (event) {
         // CREATE LIs TO GRAB INFO FROM ARRAY AND APPENTO UL
         var $newLi = $(
             `<li id="liName" class="list-unstyled text-regular font-weight-regular">${response.data.name.original},</li>
-            <li class="list-unstyled text-info font-weight-regular">City: ${response.data.city.cityOriginal}, ${response.data.stateCode}</li>
-            <li class="list-unstyled text-info font-weight-regular">Location: ${response.data.location.latitude}, ${response.data.location.longitude}</li>`
+            <li class="list-unstyled font-weight-regular">City: ${response.data.city.cityOriginal}, ${response.data.stateCode}</li>
+            <li class="list-unstyled font-weight-regular">Location: ${response.data.location.latitude}, ${response.data.location.longitude}</li>`
         );
         $newLi.appendTo($newUl);
         // APPENDTO PAGE
