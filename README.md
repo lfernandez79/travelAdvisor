@@ -2,6 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/084cfa77-9581-4632-9e57-14049a250313/deploy-status)](https://app.netlify.com/sites/traveladvisor/deploys)
 
+![GitHub top language](https://img.shields.io/github/languages/top/lfernandez79/travelAdvisor?label=jQuery)
 
 ## User Story
 As a frequent traveler, I want to be able to keep a dashboard that displayed on my phone or computer that allows me to look at airports location in different cities, the current timezone in a specified country, and the exchange rate of currency between two countries.
