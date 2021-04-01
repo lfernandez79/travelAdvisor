@@ -9,13 +9,13 @@ As a frequent traveler, I want to be able to keep a dashboard that displayed on 
 ## [Try it](https://lfernandez79.github.io/travelAdvisor/)
 
 ## Technology
-**HTML, CSS, JQuery, Bootstrap, REST API**
+*HTML, CSS, JQuery, Bootstrap, REST API, MomentJS*
 
 
 
 The following image shows a preview of the web app:
 
-<img src="airPlane/travelAdvisor.png" style="border-radius: 50% 10% / 10% 40%">
+<img src="airPlane/travelAdvisor.png" style="border-radius: 50% 10% / 10% 40%" width="400">
 
 ### Below are the following API's used to retrieve airports, timezones, and currency exchange rates:
 
