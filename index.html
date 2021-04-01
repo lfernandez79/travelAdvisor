@@ -21,13 +21,12 @@
     <link rel="manifest" href="./airPlane/site.webmanifest">
     <body>
         <header>
-            <div class="jumbotron text-center mdb-color lighten-2 white-text mb-5">
+            <div class="title text-center lighten-2 white-text mb-5">
                 <div class="container push-spaces">
                     <div class="d-flex justify-content-center">
                         <h1 class="display-4">Travel Advisor</h1>
-                        <i class="fas fa-plane"></i>
                     </div>
-                    <p class="lead"></p>
+                    <i id="icon" class="fas fa-plane fa-2x"></i>
                 </div>
             </div>
         </header>
@@ -36,12 +35,12 @@
         <main class="container">
             <div class="row">
                 <div class="d-flex justify-content-center col">
-                    <div class="card border-light mb-3" style="max-width: 20rem;">
-                        <div class="card-header">
+                    <div class="card" style="max-width: 20rem;">
+                        <div class="card-header m-4">
                             Airport Finder
                         </div>
                         <div id="airportNames" class="card-body">
-                            <h5 class="card-title">Find all airports within a city.</h5>
+                            <h5 class="card-title">Enter 3 letter Airport code to find airport location</h5>
                             <input id="cityName" class="placeholder" type="text" onfocus="this.value=''" placeholder="DFW" />
                             <button id="airportBtn" class="btn btn-success my-2 my-sm-0 search" type="button">
                                 <i class="fas fa-search-location"></i></button>
@@ -52,8 +51,8 @@
 
 <!-- WORLD TIMER -->
                 <div class="d-flex justify-content-center col">
-                    <div class="card border-light mb-3" style="max-width: 20rem;">
-                        <div class="card-header">World Time</div>
+                    <div class="card" style="max-width: 20rem;">
+                        <div class="card-header m-4">World Time</div>
                         <div id="clockZones" class="card-body">
                             <h5 class="card-title">Enter in a major city and continent to get the current timezone.</h5>
                             <input class="placeholder mb-3" id="clock-city" type="text" placeholder="New_York" />
@@ -68,8 +67,8 @@
 <!-- CURRENCY CONVERTER -->
                 
 <div class="d-flex justify-content-center col">
-                    <div class="card border-light mb-3" style="max-width: 20rem;">
-                        <div class="card-header">Currency Converter</div>
+                    <div class="card" style="max-width: 20rem;">
+                        <div class="card-header m-4">Currency Converter</div>
                         <div id="currencyConv" class="card-body">
                             <h5 class="card-title">Select your currency from the dropdown menu to see the current
                                 exchange
