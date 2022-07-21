@@ -1,6 +1,7 @@
 # Travel Advisor
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/084cfa77-9581-4632-9e57-14049a250313/deploy-status)](https://app.netlify.com/sites/traveladvisor/deploys)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flfernandez79%2FtravelAdvisor.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Flfernandez79%2FtravelAdvisor?ref=badge_shield)
 
 ![GitHub top language](https://img.shields.io/github/languages/top/lfernandez79/travelAdvisor?label=jQuery)
 
@@ -35,3 +36,6 @@ mapQuest API
 migration from jQuery to vanilla JS
 PWA
 ```
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flfernandez79%2FtravelAdvisor.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Flfernandez79%2FtravelAdvisor?ref=badge_large)
