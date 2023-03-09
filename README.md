@@ -23,7 +23,7 @@ The following image shows a preview of the web app:
 
 ### Below are the following API's used to retrieve airports, timezones, and currency exchange rates:
 
-1. [AirportIX](https://rapidapi.com/neelers/api/airportix?endpoint=apiendpoint_5511f8b7-48cc-403f-b380-96e51d636282) 
+1. [Airport info](https://rapidapi.com/Active-api/api/airport-info/) 
 
 2. [WorldTime](https://rapidapi.com/brianiswu/api/world-time2)
 
