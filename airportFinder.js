@@ -13,13 +13,15 @@ $("#airportBtn").on("click", function (event) {
     var settings = {
         async: true,
         crossDomain: true,
-        url: "https://airportix.p.rapidapi.com/airport/code/" + theCity + "/",
+        url: "https://airport-info.p.rapidapi.com/airport?iata=" + theCity + "",
         method: "GET",
         headers: {
-            "x-rapidapi-host": "airportix.p.rapidapi.com",
+            "x-rapidapi-host": "airport-info.p.rapidapi.com",
             "x-rapidapi-key": "912f8882abmsh597d3316e2e61bcp121db1jsnabc830ace42d"
         },
     };
+    console.log(settings.url);
+    
     $.ajax(settings).done(function (response) {
         console.log(response);
 
@@ -28,9 +30,11 @@ $("#airportBtn").on("click", function (event) {
 
         // CREATE LIs TO GRAB INFO FROM ARRAY AND APPENTO UL
         var $newLi = $(
-            `<li id="liName" class="list-unstyled text-regular font-weight-regular">${response.data.name.original},</li>
-            <li class="list-unstyled font-weight-regular">${response.data.city.cityOriginal}, ${response.data.stateCode}</li>
-            <li class="list-unstyled font-weight-regular">${response.data.location.latitude}, ${response.data.location.longitude}</li>`
+            `<li id="liName" class="list-unstyled text-regular font-weight-regular">${response.name},</li>
+            <li class="list-unstyled font-weight-regular">${response.street_number}, ${response.street}</li>
+            <li class="list-unstyled font-weight-regular">${response.city} ${response.state}, ${response.postal_code}</li>
+            <li class="list-unstyled font-weight-regular">${response.phone}</li>
+            <li class="list-unstyled font-weight-regular">${response.website}</li>`
         );
         $newLi.appendTo($newUl);
         // APPENDTO PAGE
