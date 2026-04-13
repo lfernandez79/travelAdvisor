@@ -1,5 +1,5 @@
 .title {
-  
+
     background: transparent;
     font-family: 'Righteous', cursive;
     text-shadow: 3px 3px 5px black;
@@ -22,13 +22,12 @@ select {
 }
 
 .card {
-    
     border: black solid 0px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     background-color: transparent;
     border-radius: 50% 10% / 10% 40%;
-
+    overflow: hidden;
 }
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0, 1);
@@ -160,6 +159,4 @@ body {
 ul {
 	font-size: 15px;
 	text-align: left;
-	margin-left: -38px;
 }
-
