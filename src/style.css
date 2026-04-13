@@ -17,9 +17,6 @@
     }
 }
 
-select {
-	margin: 10px;
-}
 
 .card {
     border: black solid 0px;
@@ -58,8 +55,30 @@ select {
     text-align: center;
 }
 
+input, select {
+    background-color: #ffffff !important;
+    color: #212529 !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 4px;
+    outline: none;
+    width: 75%;
+    padding: 6px 10px;
+    margin: 6px auto 0;
+    box-sizing: border-box;
+    display: block;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, select:focus {
+    border-color: #347B98 !important;
+    box-shadow: 0 0 0 3px rgba(52, 123, 152, 0.25);
+}
+
 #currency-amount {
-    margin-left: 10px;
+    width: 40%;
+    display: inline-block;
+    margin: 6px 0 0 12.5%;
+    vertical-align: middle;
 }
 
 
