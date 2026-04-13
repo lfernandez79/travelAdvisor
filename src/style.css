@@ -1,54 +1,52 @@
 .title {
-
-    background: transparent;
     font-family: 'Righteous', cursive;
-    text-shadow: 3px 3px 5px black;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
+/* ---- Cards ---- */
 
 .card {
-    border: black solid 0px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    background-color: transparent;
-    border-radius: 50% 10% / 10% 40%;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s, transform 0.3s;
+    background-color: #f8f9fa;
+    border-radius: 1rem;
     overflow: hidden;
+    max-width: 20rem;
+    border: none;
 }
+
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0, 1);
-
+    box-shadow: 0 8px 24px 0 rgba(52, 123, 152, 0.4);
+    transform: translateY(-3px);
 }
 
+.card-header {
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    background: linear-gradient(135deg, #f05f57, #347B98);
+    background-size: 200% 200%;
+    animation: gradient 6s ease infinite;
+    font-family: 'Righteous', cursive;
+    padding: 16px;
+    border-bottom: none;
+}
+
+/* ---- Buttons ---- */
 
 .btn:hover {
     background-color: white;
     color: black;
-    cursor: grab;
+    cursor: pointer;
 }
 
-
-.card-header {
-    text-align: center;
-    color: black;
-    font-size: 20px;
-    background: linear-gradient(to right, #F7D7D4, #fe2612a6, #347B98, #FB9902, #342309);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    font-family: 'Righteous', cursive;
-    border-radius: 10% 40% / 50% 20% !important
-}
+/* ---- Inputs ---- */
 
 .placeholder {
     font-size: small;
@@ -81,101 +79,51 @@ input:focus, select:focus {
     vertical-align: middle;
 }
 
-
-/* ********************************************************************* */
+/* ---- Body ---- */
 
 body {
-    background: #8a9da5;
+    background: linear-gradient(160deg, #7a9baa 0%, #5c7f8a 100%);
+    min-height: 100vh;
 }
 
-.new_footer_top {
-    padding: 100px 0px 200px;
-    position: relative;
-    overflow-x: hidden;
-}
-.new_footer_area .footer_bottom {
-    padding-top: 5px;
-    padding-bottom: 50px;
-}
-.footer_bottom {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 20px;
-    color: #7f88a6;
-    padding: 27px 0px;
-}
+/* ---- Footer ---- */
 
-.new_footer_top .f-title {
-    margin-bottom: 30px;
-    color: #263b5e;
-}
-
-
-.new_footer_top .footer_bg {
-    position: absolute;
-    bottom: 0;
-    background: url("https://droitthemes.com/html/saasland/img/seo/footer_bg.png") no-repeat scroll center 0;
+.footer-wave {
+    display: block;
     width: 100%;
-    height: 266px;
+    line-height: 0;
+    margin-top: 60px;
 }
 
-.new_footer_top .footer_bg .footer_bg_one {
-    background: url("https://1.bp.blogspot.com/-mvKUJFGEc-k/XclCOUSvCnI/AAAAAAAAUAE/jnBSf6Fe5_8tjjlKrunLBXwceSNvPcp3wCLcBGAsYHQ/s1600/volks.gif") no-repeat center center;
-    width: 330px;
-    height: 105px;
-    background-size:100%;
-    position: absolute;
-    bottom: 0;
-    left: 30%;
-    -webkit-animation: myfirst 22s linear infinite;
-    animation: myfirst 22s linear infinite;
+.site-footer {
+    background-color: #3d6470;
+    padding: 20px 0 28px;
 }
 
-.new_footer_top .footer_bg .footer_bg_two {
-    background: url("https://1.bp.blogspot.com/-hjgfxUW1o1g/Xck--XOdlxI/AAAAAAAAT_4/JWYFJl83usgRFMvRfoKkSDGd--_Sv04UQCLcBGAsYHQ/s1600/cyclist.gif") no-repeat center center;
-    width: 88px;
-    height: 100px;
-    background-size:100%;
-    bottom: 0;
-    left: 38%;
-    position: absolute;
-    -webkit-animation: myfirst 30s linear infinite;
-    animation: myfirst 30s linear infinite;
+.site-footer p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
 }
 
-
-
-@-moz-keyframes myfirst {
-  0% {
-    left: -25%;
-  }
-  100% {
-    left: 100%;
-  }
+.site-footer a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-@-webkit-keyframes myfirst {
-  0% {
-    left: -25%;
-  }
-  100% {
-    left: 100%;
-  }
+.site-footer a:hover {
+    color: #ffffff;
 }
 
-@keyframes myfirst {
-  0% {
-    left: -25%;
-  }
-  100% {
-    left: 100%;
-  }
+.footer-divider {
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 8px;
 }
 
-/*************footer End*****************/
-
+/* ---- Results ---- */
 
 ul {
-	font-size: 15px;
-	text-align: left;
+    font-size: 15px;
+    text-align: left;
 }

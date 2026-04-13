@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 npm install      # install dependencies (first time only)
-npm run dev      # start Vite dev server at http://localhost:5173
+npm run dev      # start Vite dev server at http://localhost:5173 (or 5174 if port is taken)
 npm run build    # build to dist/
 npm run preview  # preview the production build
 ```
@@ -31,7 +31,7 @@ Copy `.env.example` to `.env` and fill in the key. Vite exposes `VITE_` prefixed
 VITE_AIRPORT_API_KEY=your_rapidapi_key_here
 ```
 
-The RapidAPI key is only needed for the Airport Finder widget. The other two APIs are free with no authentication.
+The RapidAPI key is only needed for the Airport Finder widget. The other two APIs are free with no authentication. In production (Netlify), set `VITE_AIRPORT_API_KEY` in the Netlify dashboard under Site configuration → Environment variables.
 
 ## Result Rendering Pattern
 
@@ -40,6 +40,21 @@ Each module follows the same pattern to avoid the old jQuery global-clear bug:
 2. Create a new `<ul>` with that class, populate it with `<li>` elements, and append it
 
 This scopes DOM updates to each card so triggering one widget never clears another's results.
+
+## Design System
+
+**Color palette:**
+- Body background: diagonal gradient `#7a9baa → #5c7f8a` (sky/ocean tones)
+- Card background: `#f8f9fa` (near-white, contrasts against the body)
+- Card header: animated gradient `#f05f57 → #347B98` (coral sunset to steel blue)
+- Accent / focus ring: `#347B98`
+- Footer background: `#3d6470`
+
+**Card hover effect:** blue-tinted shadow `rgba(52, 123, 152, 0.4)` + 3px upward lift via `translateY(-3px)`
+
+**Responsive layout:** cards use `col-12 col-md-6 col-lg-4` — stack on mobile, 2-col on tablet, 3-col on desktop.
+
+**Footer:** CSS SVG wave divider transitions from the body gradient into the footer, followed by API attribution links and copyright. No external image dependencies.
 
 ## Static Assets
 
