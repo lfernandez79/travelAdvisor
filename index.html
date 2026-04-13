@@ -55,9 +55,67 @@
                     <div class="card" style="max-width: 20rem;">
                         <div class="card-header m-4">World Time</div>
                         <div id="clockZones" class="card-body">
-                            <h5 class="card-title">Enter a region and city to get the current local time.</h5>
-                            <input class="placeholder mb-3" id="clock-region" type="text" placeholder="America" />
-                            <input id="clock-city" class="placeholder" type="text" placeholder="New_York" />
+                            <h5 class="card-title">Select a city to get the current local time.</h5>
+                            <select id="timezone-select" class="placeholder">
+                                <optgroup label="Americas">
+                                    <option value="America/New_York">New York (EST/EDT)</option>
+                                    <option value="America/Chicago">Chicago / Dallas / Houston (CST/CDT)</option>
+                                    <option value="America/Denver">Denver (MST/MDT)</option>
+                                    <option value="America/Los_Angeles">Los Angeles / Seattle (PST/PDT)</option>
+                                    <option value="America/Anchorage">Anchorage (AKST)</option>
+                                    <option value="Pacific/Honolulu">Honolulu (HST)</option>
+                                    <option value="America/Toronto">Toronto (EST/EDT)</option>
+                                    <option value="America/Vancouver">Vancouver (PST/PDT)</option>
+                                    <option value="America/Mexico_City">Mexico City (CST/CDT)</option>
+                                    <option value="America/Bogota">Bogota (COT)</option>
+                                    <option value="America/Lima">Lima (PET)</option>
+                                    <option value="America/Caracas">Caracas (VET)</option>
+                                    <option value="America/Santiago">Santiago (CLT)</option>
+                                    <option value="America/Sao_Paulo">São Paulo (BRT)</option>
+                                    <option value="America/Argentina/Buenos_Aires">Buenos Aires (ART)</option>
+                                </optgroup>
+                                <optgroup label="Europe">
+                                    <option value="Europe/London">London (GMT/BST)</option>
+                                    <option value="Europe/Lisbon">Lisbon (WET/WEST)</option>
+                                    <option value="Europe/Paris">Paris / Madrid / Rome (CET/CEST)</option>
+                                    <option value="Europe/Berlin">Berlin / Amsterdam (CET/CEST)</option>
+                                    <option value="Europe/Zurich">Zurich / Vienna (CET/CEST)</option>
+                                    <option value="Europe/Stockholm">Stockholm / Oslo (CET/CEST)</option>
+                                    <option value="Europe/Athens">Athens (EET/EEST)</option>
+                                    <option value="Europe/Helsinki">Helsinki (EET/EEST)</option>
+                                    <option value="Europe/Warsaw">Warsaw (CET/CEST)</option>
+                                    <option value="Europe/Istanbul">Istanbul (TRT)</option>
+                                    <option value="Europe/Moscow">Moscow (MSK)</option>
+                                </optgroup>
+                                <optgroup label="Africa">
+                                    <option value="Africa/Cairo">Cairo (EET)</option>
+                                    <option value="Africa/Casablanca">Casablanca (WET)</option>
+                                    <option value="Africa/Lagos">Lagos (WAT)</option>
+                                    <option value="Africa/Nairobi">Nairobi (EAT)</option>
+                                    <option value="Africa/Johannesburg">Johannesburg (SAST)</option>
+                                </optgroup>
+                                <optgroup label="Asia">
+                                    <option value="Asia/Dubai">Dubai (GST)</option>
+                                    <option value="Asia/Riyadh">Riyadh (AST)</option>
+                                    <option value="Asia/Karachi">Karachi (PKT)</option>
+                                    <option value="Asia/Kolkata">Mumbai / New Delhi (IST)</option>
+                                    <option value="Asia/Dhaka">Dhaka (BST)</option>
+                                    <option value="Asia/Bangkok">Bangkok / Jakarta (ICT)</option>
+                                    <option value="Asia/Singapore">Singapore (SGT)</option>
+                                    <option value="Asia/Hong_Kong">Hong Kong (HKT)</option>
+                                    <option value="Asia/Shanghai">Beijing / Shanghai (CST)</option>
+                                    <option value="Asia/Tokyo">Tokyo (JST)</option>
+                                    <option value="Asia/Seoul">Seoul (KST)</option>
+                                    <option value="Asia/Manila">Manila (PHT)</option>
+                                </optgroup>
+                                <optgroup label="Pacific">
+                                    <option value="Australia/Sydney">Sydney / Melbourne (AEST/AEDT)</option>
+                                    <option value="Australia/Brisbane">Brisbane (AEST)</option>
+                                    <option value="Australia/Perth">Perth (AWST)</option>
+                                    <option value="Pacific/Auckland">Auckland (NZST/NZDT)</option>
+                                    <option value="Pacific/Fiji">Fiji (FJT)</option>
+                                </optgroup>
+                            </select>
                             <button id="clockSearchBtn" class="btn btn-success my-2 my-sm-0 search" type="button">
                                 <i class="fas fa-search"></i>
                             </button>
@@ -139,9 +197,8 @@
                                 <option value="USD">United States Dollar (USD)</option>
                                 <option value="ZAR">South African Rand (ZAR)</option>
                             </select>
-                            <input id="currency-amount" type="number" min="0" />
-                            <br>
-                            <button id="convertBtn" type="button" class="btn btn-success ms-2 mt-3">Convert</button>
+                            <input id="currency-amount" type="number" min="0" placeholder="100" />
+                            <button id="convertBtn" type="button" class="btn btn-success ms-1 mt-2">Convert</button>
                         </div>
                     </div>
                 </div>

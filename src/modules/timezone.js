@@ -1,9 +1,8 @@
 // World Time — uses timeapi.io (free, no API key required)
-// Input: region (e.g. "America") and city (e.g. "New_York")
+// Timezone values are valid IANA strings selected from the dropdown
 
 const clockSearchBtn = document.getElementById('clockSearchBtn');
-const clockRegionInput = document.getElementById('clock-region');
-const clockCityInput = document.getElementById('clock-city');
+const timezoneSelect = document.getElementById('timezone-select');
 const clockZones = document.getElementById('clockZones');
 
 function showTimeResult(html) {
@@ -18,33 +17,23 @@ function showTimeResult(html) {
 clockSearchBtn.addEventListener('click', async (event) => {
   event.preventDefault();
 
-  const region = clockRegionInput.value.trim();
-  const city = clockCityInput.value.trim();
-
-  if (!region || !city) {
-    showTimeResult('<li class="text-danger">Please enter both a region and a city.</li>');
-    return;
-  }
+  const timezone = timezoneSelect.value;
 
   showTimeResult('<li class="text-muted">Searching...</li>');
 
-  // Encode each part separately so the / remains a path separator
-  const timezone = `${encodeURIComponent(region)}/${encodeURIComponent(city)}`;
-
   try {
     const response = await fetch(
-      `https://timeapi.io/api/time/current/zone?timeZone=${timezone}`
+      `https://timeapi.io/api/time/current/zone?timeZone=${encodeURIComponent(timezone)}`
     );
 
     if (response.status === 400 || response.status === 404) {
-      showTimeResult(`<li class="text-danger">Timezone not found. Try "America" / "New_York" or "Europe" / "London".</li>`);
+      showTimeResult('<li class="text-danger">Timezone not found. Please select a city from the list.</li>');
       return;
     }
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const data = await response.json();
 
-    // timeapi.io returns dateTime as "2024-01-12T14:30:45.123"
     const dt = new Date(data.dateTime);
     const formattedTime = new Intl.DateTimeFormat('en-US', {
       timeZone: data.timeZone,
