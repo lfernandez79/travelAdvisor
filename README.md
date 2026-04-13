@@ -20,7 +20,7 @@ The following technologies are used in Travel Advisor:
 
 Here are some screenshots of Travel Advisor in action:
 
-<img src="public/airPlane/travelAdvisor.png" style="border-radius: 50% 10% / 10% 40%" width="70%">
+<img src="public/airPlane/travelAdvisor.png" width="70%">
 
 ## Getting Started
 
@@ -41,13 +41,15 @@ Travel Advisor uses the following APIs to retrieve airport information, timezone
 
 1. [Airport Info](https://rapidapi.com/Active-api/api/airport-info/) — Provides airport details by IATA code (e.g. DFW, JFK). Requires a RapidAPI key stored in `.env`.
 
-2. [TimeAPI](https://timeapi.io/) — Provides the current local time for any timezone. Free, no API key required. Input format: Region (e.g. `America`) and City (e.g. `New_York`).
+2. [TimeAPI](https://timeapi.io/) — Provides the current local time for any timezone. Free, no API key required. Select from a dropdown of major world cities grouped by region.
 
 3. [ExchangeRate API](https://www.exchangerate-api.com/) — Provides live currency exchange rates. Free, no API key required.
 
 ## Accomplished
 
 > ~~Migrate from jQuery to vanilla JavaScript~~ — Completed. Migrated to vanilla JS ES modules with the Fetch API, replaced MomentJS with native `Intl.DateTimeFormat`, and upgraded Bootstrap 4 to Bootstrap 5.
+
+> ~~UI modernization~~ — Completed. Refreshed design with a cohesive color palette (coral-to-steel-blue card headers, ocean-tone body gradient), responsive card layout, improved input styling, and a clean SVG wave footer with API credits.
 
 ## Future
 
