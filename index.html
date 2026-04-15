@@ -200,6 +200,56 @@
                     </div>
                 </div>
 
+
+                <!-- WEATHER -->
+                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                    <div class="card">
+                        <div class="card-header">Weather</div>
+                        <div id="weatherCard" class="card-body">
+                            <h5 class="card-title">Enter a city name to get the current weather.</h5>
+                            <input id="weatherCity" class="placeholder" type="text" placeholder="Paris" />
+                            <button id="weatherBtn" class="btn btn-success my-2 my-sm-0 search" type="button">
+                                <i class="fas fa-cloud-sun"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UNIT CONVERTER -->
+                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                    <div class="card">
+                        <div class="card-header">Unit Converter</div>
+                        <div id="converterCard" class="card-body">
+                            <h5 class="card-title">Convert between common travel units.</h5>
+                            <select id="converterCategory" class="placeholder">
+                                <option value="temperature">Temperature</option>
+                                <option value="distance">Distance</option>
+                                <option value="weight">Weight</option>
+                                <option value="volume">Volume</option>
+                            </select>
+                            <div class="d-flex justify-content-center align-items-center mt-2" style="gap: 6px;">
+                                <input id="converterInput" type="number" placeholder="0" style="width:45%; margin:0;" />
+                                <select id="converterUnit" style="width:35%; margin:0;"></select>
+                            </div>
+                            <button id="converterBtn" class="btn btn-success mt-2" type="button">Convert</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COUNTRY INFO -->
+                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                    <div class="card">
+                        <div class="card-header">Country Info</div>
+                        <div id="countryCard" class="card-body">
+                            <h5 class="card-title">Enter a country name to get key travel information.</h5>
+                            <input id="countryInput" class="placeholder" type="text" placeholder="Japan" />
+                            <button id="countryBtn" class="btn btn-success my-2 my-sm-0 search" type="button">
+                                <i class="fas fa-globe"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </main>
 
@@ -216,6 +266,10 @@
                     <a href="https://timeapi.io/" target="_blank" rel="noopener">TimeAPI</a>
                     <span class="footer-divider">|</span>
                     <a href="https://www.exchangerate-api.com/" target="_blank" rel="noopener">ExchangeRate API</a>
+                    <span class="footer-divider">|</span>
+                    <a href="https://wttr.in/" target="_blank" rel="noopener">wttr.in</a>
+                    <span class="footer-divider">|</span>
+                    <a href="https://restcountries.com/" target="_blank" rel="noopener">REST Countries</a>
                 </p>
                 <p>© Travel Advisor 2026. All rights reserved.</p>
             </div>

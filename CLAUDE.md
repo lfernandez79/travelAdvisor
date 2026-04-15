@@ -13,15 +13,18 @@ npm run preview  # preview the production build
 
 ## Architecture
 
-Single-page dashboard with three independent API-driven widgets. Each widget is an ES module in `src/modules/` that registers a click event listener and writes results into its own card div.
+Single-page dashboard with six independent API-driven widgets. Each widget is an ES module in `src/modules/` that registers a click event listener and writes results into its own card div.
 
 | Widget | Module | API |
 |---|---|---|
 | Airport Finder | `src/modules/airport.js` | `airport-info.p.rapidapi.com` — IATA code lookup (key in `.env`) |
 | World Time | `src/modules/timezone.js` | `timeapi.io/api/time/current/zone` — free, no key |
 | Currency Converter | `src/modules/currency.js` | `api.exchangerate-api.com/v4/latest` — free, no key, CORS-enabled |
+| Weather | `src/modules/weather.js` | `wttr.in/{city}?format=j1` — free, no key, returns temp/conditions/humidity/wind |
+| Unit Converter | `src/modules/converter.js` | No API — pure JS math (°C↔°F, km↔mi, kg↔lbs, L↔gal) |
+| Country Info | `src/modules/country.js` | `restcountries.com/v3.1/name/{name}` — free, no key, returns flag/capital/population/languages/currency |
 
-`src/main.js` is the Vite entry point — it only imports the three modules.
+`src/main.js` is the Vite entry point — it only imports the six modules.
 
 ## Environment Variables
 

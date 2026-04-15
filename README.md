@@ -37,7 +37,7 @@ VITE_AIRPORT_API_KEY=your_rapidapi_key_here
 ```
 
 ## APIs
-Travel Advisor uses the following APIs to retrieve airport information, timezones, and currency exchange rates:
+Travel Advisor uses the following APIs:
 
 1. [Airport Info](https://rapidapi.com/Active-api/api/airport-info/) — Provides airport details by IATA code (e.g. DFW, JFK). Requires a RapidAPI key stored in `.env`.
 
@@ -45,14 +45,20 @@ Travel Advisor uses the following APIs to retrieve airport information, timezone
 
 3. [ExchangeRate API](https://www.exchangerate-api.com/) — Provides live currency exchange rates. Free, no API key required.
 
+4. [wttr.in](https://wttr.in/) — Provides current weather conditions by city name (temperature, description, humidity, wind). Free, no API key required.
+
+5. [REST Countries](https://restcountries.com/) — Provides country details by name (flag, capital, population, languages, currency, region). Free, no API key required.
+
+The Unit Converter widget requires no API — all conversions (°C↔°F, km↔mi, kg↔lbs, L↔gal) are computed locally.
+
 ## Accomplished
 
 > ~~Migrate from jQuery to vanilla JavaScript~~ — Completed. Migrated to vanilla JS ES modules with the Fetch API, replaced MomentJS with native `Intl.DateTimeFormat`, and upgraded Bootstrap 4 to Bootstrap 5.
 
 > ~~UI modernization~~ — Completed. Refreshed design with a cohesive color palette (coral-to-steel-blue card headers, ocean-tone body gradient), responsive card layout, improved input styling, and a clean SVG wave footer with API credits.
 
-## Future
+> ~~Weather widget~~ — Completed. Shows current conditions, temperature (°C/°F), feels-like, humidity, and wind speed for any city via wttr.in.
 
-> Implement MapQuest API to provide more accurate location data for airports and cities.
+> ~~Unit Converter widget~~ — Completed. Converts temperature, distance, weight, and volume using pure JS math — no API required.
 
-> Develop a Progressive Web App (PWA) version of Travel Advisor to allow users to access the app offline and enjoy a faster, more immersive experience.
+> ~~Country Info widget~~ — Completed. Shows flag, capital, region, population, languages, and currency for any country via REST Countries.
