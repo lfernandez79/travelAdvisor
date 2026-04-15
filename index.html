@@ -30,223 +30,251 @@
             </div>
         </header>
 
-        <!-- AIRPORT FINDER -->
         <main class="container">
-            <div class="row g-4 justify-content-center">
 
-                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-                    <div class="card">
-                        <div class="card-header">
-                            Airport Finder
-                        </div>
-                        <div id="airportNames" class="card-body">
-                            <h5 class="card-title">Enter 3 letter Airport code to find airport location</h5>
-                            <input id="cityName" class="placeholder" type="text" onfocus="this.value=''" placeholder="DFW" />
-                            <button id="airportBtn" class="btn btn-success my-2 my-sm-0 search" type="button">
-                                <i class="fas fa-search-location"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <!-- Tab navigation -->
+            <ul class="nav nav-pills justify-content-center mb-4" id="mainTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="travel-tab" data-bs-toggle="pill"
+                        data-bs-target="#travel-pane" type="button" role="tab" aria-selected="true">
+                        <i class="fas fa-plane me-2"></i>Travel
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reference-tab" data-bs-toggle="pill"
+                        data-bs-target="#reference-pane" type="button" role="tab" aria-selected="false">
+                        <i class="fas fa-compass me-2"></i>Reference
+                    </button>
+                </li>
+            </ul>
 
-                <!-- WORLD TIMER -->
-                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-                    <div class="card">
-                        <div class="card-header">World Time</div>
-                        <div id="clockZones" class="card-body">
-                            <h5 class="card-title">Select a city to get the current local time.</h5>
-                            <select id="timezone-select" class="placeholder">
-                                <optgroup label="Americas">
-                                    <option value="America/New_York">New York (EST/EDT)</option>
-                                    <option value="America/Chicago">Chicago / Dallas / Houston (CST/CDT)</option>
-                                    <option value="America/Denver">Denver (MST/MDT)</option>
-                                    <option value="America/Los_Angeles">Los Angeles / Seattle (PST/PDT)</option>
-                                    <option value="America/Anchorage">Anchorage (AKST)</option>
-                                    <option value="Pacific/Honolulu">Honolulu (HST)</option>
-                                    <option value="America/Toronto">Toronto (EST/EDT)</option>
-                                    <option value="America/Vancouver">Vancouver (PST/PDT)</option>
-                                    <option value="America/Mexico_City">Mexico City (CST/CDT)</option>
-                                    <option value="America/Bogota">Bogota (COT)</option>
-                                    <option value="America/Lima">Lima (PET)</option>
-                                    <option value="America/Caracas">Caracas (VET)</option>
-                                    <option value="America/Santiago">Santiago (CLT)</option>
-                                    <option value="America/Sao_Paulo">São Paulo (BRT)</option>
-                                    <option value="America/Argentina/Buenos_Aires">Buenos Aires (ART)</option>
-                                </optgroup>
-                                <optgroup label="Europe">
-                                    <option value="Europe/London">London (GMT/BST)</option>
-                                    <option value="Europe/Lisbon">Lisbon (WET/WEST)</option>
-                                    <option value="Europe/Paris">Paris / Madrid / Rome (CET/CEST)</option>
-                                    <option value="Europe/Berlin">Berlin / Amsterdam (CET/CEST)</option>
-                                    <option value="Europe/Zurich">Zurich / Vienna (CET/CEST)</option>
-                                    <option value="Europe/Stockholm">Stockholm / Oslo (CET/CEST)</option>
-                                    <option value="Europe/Athens">Athens (EET/EEST)</option>
-                                    <option value="Europe/Helsinki">Helsinki (EET/EEST)</option>
-                                    <option value="Europe/Warsaw">Warsaw (CET/CEST)</option>
-                                    <option value="Europe/Istanbul">Istanbul (TRT)</option>
-                                    <option value="Europe/Moscow">Moscow (MSK)</option>
-                                </optgroup>
-                                <optgroup label="Africa">
-                                    <option value="Africa/Cairo">Cairo (EET)</option>
-                                    <option value="Africa/Casablanca">Casablanca (WET)</option>
-                                    <option value="Africa/Lagos">Lagos (WAT)</option>
-                                    <option value="Africa/Nairobi">Nairobi (EAT)</option>
-                                    <option value="Africa/Johannesburg">Johannesburg (SAST)</option>
-                                </optgroup>
-                                <optgroup label="Asia">
-                                    <option value="Asia/Dubai">Dubai (GST)</option>
-                                    <option value="Asia/Riyadh">Riyadh (AST)</option>
-                                    <option value="Asia/Karachi">Karachi (PKT)</option>
-                                    <option value="Asia/Kolkata">Mumbai / New Delhi (IST)</option>
-                                    <option value="Asia/Dhaka">Dhaka (BST)</option>
-                                    <option value="Asia/Bangkok">Bangkok / Jakarta (ICT)</option>
-                                    <option value="Asia/Singapore">Singapore (SGT)</option>
-                                    <option value="Asia/Hong_Kong">Hong Kong (HKT)</option>
-                                    <option value="Asia/Shanghai">Beijing / Shanghai (CST)</option>
-                                    <option value="Asia/Tokyo">Tokyo (JST)</option>
-                                    <option value="Asia/Seoul">Seoul (KST)</option>
-                                    <option value="Asia/Manila">Manila (PHT)</option>
-                                </optgroup>
-                                <optgroup label="Pacific">
-                                    <option value="Australia/Sydney">Sydney / Melbourne (AEST/AEDT)</option>
-                                    <option value="Australia/Brisbane">Brisbane (AEST)</option>
-                                    <option value="Australia/Perth">Perth (AWST)</option>
-                                    <option value="Pacific/Auckland">Auckland (NZST/NZDT)</option>
-                                    <option value="Pacific/Fiji">Fiji (FJT)</option>
-                                </optgroup>
-                            </select>
-                            <button id="clockSearchBtn" class="btn btn-success my-2 my-sm-0 search" type="button">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div class="tab-content">
 
-                <!-- CURRENCY CONVERTER -->
-                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-                    <div class="card">
-                        <div class="card-header">Currency Converter</div>
-                        <div id="currencyConv" class="card-body">
-                            <h5 class="card-title">Select your currency from the dropdown menu to see the current exchange rate.</h5>
-                            <select id="first-currency" class="placeholder" name="">
-                                <option value="AUD">Australian Dollar (AUD)</option>
-                                <option value="BGN">Bulgarian Lev (BGN)</option>
-                                <option value="BRL">Brazilian Real (BRL)</option>
-                                <option value="CAD">Canadian Dollar (CAD)</option>
-                                <option value="CHF">Swiss Franc (CHF)</option>
-                                <option value="CNY">Chinese Yuan (CNY)</option>
-                                <option value="CZK">Czech Koruna (CZK)</option>
-                                <option value="DKK">Danish Krone (DKK)</option>
-                                <option value="EUR">Euro (EUR)</option>
-                                <option value="GBP">Pound Sterling (GBP)</option>
-                                <option value="HKD">Hong Kong Dollar (HKD)</option>
-                                <option value="HUF">Hungarian Forint (HUF)</option>
-                                <option value="IDR">Indonesian Rupiah (IDR)</option>
-                                <option value="ILS">Israeli Shekel (ILS)</option>
-                                <option value="INR">Indian Rupee (INR)</option>
-                                <option value="ISK">Icelandic Krona (ISK)</option>
-                                <option value="JPY">Japanese Yen (JPY)</option>
-                                <option value="KRW">South Korean Won (KRW)</option>
-                                <option value="MXN">Mexican Peso (MXN)</option>
-                                <option value="MYR">Malaysian Ringgit (MYR)</option>
-                                <option value="NOK">Norwegian Krone (NOK)</option>
-                                <option value="NZD">New Zealand Dollar (NZD)</option>
-                                <option value="PHP">Philippine Peso (PHP)</option>
-                                <option value="PLN">Polish Zloty (PLN)</option>
-                                <option value="RON">Romanian Leu (RON)</option>
-                                <option value="SEK">Swedish Krona (SEK)</option>
-                                <option value="SGD">Singapore Dollar (SGD)</option>
-                                <option value="THB">Thai Baht (THB)</option>
-                                <option value="TRY">Turkish Lira (TRY)</option>
-                                <option value="USD" selected>United States Dollar (USD)</option>
-                                <option value="ZAR">South African Rand (ZAR)</option>
-                            </select>
-                            <select id="second-currency" class="placeholder" name="">
-                                <option value="AUD">Australian Dollar (AUD)</option>
-                                <option value="BGN">Bulgarian Lev (BGN)</option>
-                                <option value="BRL">Brazilian Real (BRL)</option>
-                                <option value="CAD">Canadian Dollar (CAD)</option>
-                                <option value="CHF">Swiss Franc (CHF)</option>
-                                <option value="CNY">Chinese Yuan (CNY)</option>
-                                <option value="CZK">Czech Koruna (CZK)</option>
-                                <option value="DKK">Danish Krone (DKK)</option>
-                                <option value="EUR">Euro (EUR)</option>
-                                <option value="GBP">Pound Sterling (GBP)</option>
-                                <option value="HKD">Hong Kong Dollar (HKD)</option>
-                                <option value="HUF">Hungarian Forint (HUF)</option>
-                                <option value="IDR">Indonesian Rupiah (IDR)</option>
-                                <option value="ILS">Israeli Shekel (ILS)</option>
-                                <option value="INR">Indian Rupee (INR)</option>
-                                <option value="ISK">Icelandic Krona (ISK)</option>
-                                <option value="JPY">Japanese Yen (JPY)</option>
-                                <option value="KRW">South Korean Won (KRW)</option>
-                                <option value="MXN">Mexican Peso (MXN)</option>
-                                <option value="MYR">Malaysian Ringgit (MYR)</option>
-                                <option value="NOK">Norwegian Krone (NOK)</option>
-                                <option value="NZD">New Zealand Dollar (NZD)</option>
-                                <option value="PHP">Philippine Peso (PHP)</option>
-                                <option value="PLN">Polish Zloty (PLN)</option>
-                                <option value="RON">Romanian Leu (RON)</option>
-                                <option value="SEK">Swedish Krona (SEK)</option>
-                                <option value="SGD">Singapore Dollar (SGD)</option>
-                                <option value="THB">Thai Baht (THB)</option>
-                                <option value="TRY">Turkish Lira (TRY)</option>
-                                <option value="USD">United States Dollar (USD)</option>
-                                <option value="ZAR">South African Rand (ZAR)</option>
-                            </select>
-                            <input id="currency-amount" type="number" min="0" placeholder="100" />
-                            <button id="convertBtn" type="button" class="btn btn-success ms-1 mt-2">Convert</button>
-                        </div>
-                    </div>
-                </div>
+                <!-- TAB 1: TRAVEL -->
+                <div class="tab-pane fade show active" id="travel-pane" role="tabpanel">
+                    <div class="row g-4 justify-content-center">
 
-
-                <!-- WEATHER -->
-                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-                    <div class="card">
-                        <div class="card-header">Weather</div>
-                        <div id="weatherCard" class="card-body">
-                            <h5 class="card-title">Enter a city name to get the current weather.</h5>
-                            <input id="weatherCity" class="placeholder" type="text" placeholder="Paris" />
-                            <button id="weatherBtn" class="btn btn-success my-2 my-sm-0 search" type="button">
-                                <i class="fas fa-cloud-sun"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- UNIT CONVERTER -->
-                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-                    <div class="card">
-                        <div class="card-header">Unit Converter</div>
-                        <div id="converterCard" class="card-body">
-                            <h5 class="card-title">Convert between common travel units.</h5>
-                            <select id="converterCategory" class="placeholder">
-                                <option value="temperature">Temperature</option>
-                                <option value="distance">Distance</option>
-                                <option value="weight">Weight</option>
-                                <option value="volume">Volume</option>
-                            </select>
-                            <div class="d-flex justify-content-center align-items-center mt-2" style="gap: 6px;">
-                                <input id="converterInput" type="number" placeholder="0" style="width:45%; margin:0;" />
-                                <select id="converterUnit" style="width:35%; margin:0;"></select>
+                        <!-- AIRPORT FINDER -->
+                        <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                            <div class="card">
+                                <div class="card-header">Airport Finder</div>
+                                <div id="airportNames" class="card-body">
+                                    <h5 class="card-title">Enter a 3-letter IATA code.</h5>
+                                    <input id="cityName" class="placeholder" type="text" onfocus="this.value=''" placeholder="DFW" />
+                                    <button id="airportBtn" class="btn btn-success my-2 my-sm-0 search" type="button">
+                                        <i class="fas fa-search-location"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <button id="converterBtn" class="btn btn-success mt-2" type="button">Convert</button>
                         </div>
+
+                        <!-- WORLD TIME -->
+                        <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                            <div class="card">
+                                <div class="card-header">World Time</div>
+                                <div id="clockZones" class="card-body">
+                                    <h5 class="card-title">Select a city for the current local time.</h5>
+                                    <select id="timezone-select" class="placeholder">
+                                        <optgroup label="Americas">
+                                            <option value="America/New_York">New York (EST/EDT)</option>
+                                            <option value="America/Chicago">Chicago / Dallas / Houston (CST/CDT)</option>
+                                            <option value="America/Denver">Denver (MST/MDT)</option>
+                                            <option value="America/Los_Angeles">Los Angeles / Seattle (PST/PDT)</option>
+                                            <option value="America/Anchorage">Anchorage (AKST)</option>
+                                            <option value="Pacific/Honolulu">Honolulu (HST)</option>
+                                            <option value="America/Toronto">Toronto (EST/EDT)</option>
+                                            <option value="America/Vancouver">Vancouver (PST/PDT)</option>
+                                            <option value="America/Mexico_City">Mexico City (CST/CDT)</option>
+                                            <option value="America/Bogota">Bogota (COT)</option>
+                                            <option value="America/Lima">Lima (PET)</option>
+                                            <option value="America/Caracas">Caracas (VET)</option>
+                                            <option value="America/Santiago">Santiago (CLT)</option>
+                                            <option value="America/Sao_Paulo">São Paulo (BRT)</option>
+                                            <option value="America/Argentina/Buenos_Aires">Buenos Aires (ART)</option>
+                                        </optgroup>
+                                        <optgroup label="Europe">
+                                            <option value="Europe/London">London (GMT/BST)</option>
+                                            <option value="Europe/Lisbon">Lisbon (WET/WEST)</option>
+                                            <option value="Europe/Paris">Paris / Madrid / Rome (CET/CEST)</option>
+                                            <option value="Europe/Berlin">Berlin / Amsterdam (CET/CEST)</option>
+                                            <option value="Europe/Zurich">Zurich / Vienna (CET/CEST)</option>
+                                            <option value="Europe/Stockholm">Stockholm / Oslo (CET/CEST)</option>
+                                            <option value="Europe/Athens">Athens (EET/EEST)</option>
+                                            <option value="Europe/Helsinki">Helsinki (EET/EEST)</option>
+                                            <option value="Europe/Warsaw">Warsaw (CET/CEST)</option>
+                                            <option value="Europe/Istanbul">Istanbul (TRT)</option>
+                                            <option value="Europe/Moscow">Moscow (MSK)</option>
+                                        </optgroup>
+                                        <optgroup label="Africa">
+                                            <option value="Africa/Cairo">Cairo (EET)</option>
+                                            <option value="Africa/Casablanca">Casablanca (WET)</option>
+                                            <option value="Africa/Lagos">Lagos (WAT)</option>
+                                            <option value="Africa/Nairobi">Nairobi (EAT)</option>
+                                            <option value="Africa/Johannesburg">Johannesburg (SAST)</option>
+                                        </optgroup>
+                                        <optgroup label="Asia">
+                                            <option value="Asia/Dubai">Dubai (GST)</option>
+                                            <option value="Asia/Riyadh">Riyadh (AST)</option>
+                                            <option value="Asia/Karachi">Karachi (PKT)</option>
+                                            <option value="Asia/Kolkata">Mumbai / New Delhi (IST)</option>
+                                            <option value="Asia/Dhaka">Dhaka (BST)</option>
+                                            <option value="Asia/Bangkok">Bangkok / Jakarta (ICT)</option>
+                                            <option value="Asia/Singapore">Singapore (SGT)</option>
+                                            <option value="Asia/Hong_Kong">Hong Kong (HKT)</option>
+                                            <option value="Asia/Shanghai">Beijing / Shanghai (CST)</option>
+                                            <option value="Asia/Tokyo">Tokyo (JST)</option>
+                                            <option value="Asia/Seoul">Seoul (KST)</option>
+                                            <option value="Asia/Manila">Manila (PHT)</option>
+                                        </optgroup>
+                                        <optgroup label="Pacific">
+                                            <option value="Australia/Sydney">Sydney / Melbourne (AEST/AEDT)</option>
+                                            <option value="Australia/Brisbane">Brisbane (AEST)</option>
+                                            <option value="Australia/Perth">Perth (AWST)</option>
+                                            <option value="Pacific/Auckland">Auckland (NZST/NZDT)</option>
+                                            <option value="Pacific/Fiji">Fiji (FJT)</option>
+                                        </optgroup>
+                                    </select>
+                                    <button id="clockSearchBtn" class="btn btn-success my-2 my-sm-0 search" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- WEATHER -->
+                        <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                            <div class="card">
+                                <div class="card-header">Weather</div>
+                                <div id="weatherCard" class="card-body">
+                                    <h5 class="card-title">Enter a city name for current conditions.</h5>
+                                    <input id="weatherCity" class="placeholder" type="text" placeholder="Paris" />
+                                    <button id="weatherBtn" class="btn btn-success my-2 my-sm-0 search" type="button">
+                                        <i class="fas fa-cloud-sun"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- COUNTRY INFO -->
-                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-                    <div class="card">
-                        <div class="card-header">Country Info</div>
-                        <div id="countryCard" class="card-body">
-                            <h5 class="card-title">Enter a country name to get key travel information.</h5>
-                            <input id="countryInput" class="placeholder" type="text" placeholder="Japan" />
-                            <button id="countryBtn" class="btn btn-success my-2 my-sm-0 search" type="button">
-                                <i class="fas fa-globe"></i>
-                            </button>
+                <!-- TAB 2: REFERENCE -->
+                <div class="tab-pane fade" id="reference-pane" role="tabpanel">
+                    <div class="row g-4 justify-content-center">
+
+                        <!-- CURRENCY CONVERTER -->
+                        <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                            <div class="card">
+                                <div class="card-header">Currency Converter</div>
+                                <div id="currencyConv" class="card-body">
+                                    <h5 class="card-title">Select currencies and enter an amount.</h5>
+                                    <select id="first-currency" class="placeholder" name="">
+                                        <option value="AUD">Australian Dollar (AUD)</option>
+                                        <option value="BGN">Bulgarian Lev (BGN)</option>
+                                        <option value="BRL">Brazilian Real (BRL)</option>
+                                        <option value="CAD">Canadian Dollar (CAD)</option>
+                                        <option value="CHF">Swiss Franc (CHF)</option>
+                                        <option value="CNY">Chinese Yuan (CNY)</option>
+                                        <option value="CZK">Czech Koruna (CZK)</option>
+                                        <option value="DKK">Danish Krone (DKK)</option>
+                                        <option value="EUR">Euro (EUR)</option>
+                                        <option value="GBP">Pound Sterling (GBP)</option>
+                                        <option value="HKD">Hong Kong Dollar (HKD)</option>
+                                        <option value="HUF">Hungarian Forint (HUF)</option>
+                                        <option value="IDR">Indonesian Rupiah (IDR)</option>
+                                        <option value="ILS">Israeli Shekel (ILS)</option>
+                                        <option value="INR">Indian Rupee (INR)</option>
+                                        <option value="ISK">Icelandic Krona (ISK)</option>
+                                        <option value="JPY">Japanese Yen (JPY)</option>
+                                        <option value="KRW">South Korean Won (KRW)</option>
+                                        <option value="MXN">Mexican Peso (MXN)</option>
+                                        <option value="MYR">Malaysian Ringgit (MYR)</option>
+                                        <option value="NOK">Norwegian Krone (NOK)</option>
+                                        <option value="NZD">New Zealand Dollar (NZD)</option>
+                                        <option value="PHP">Philippine Peso (PHP)</option>
+                                        <option value="PLN">Polish Zloty (PLN)</option>
+                                        <option value="RON">Romanian Leu (RON)</option>
+                                        <option value="SEK">Swedish Krona (SEK)</option>
+                                        <option value="SGD">Singapore Dollar (SGD)</option>
+                                        <option value="THB">Thai Baht (THB)</option>
+                                        <option value="TRY">Turkish Lira (TRY)</option>
+                                        <option value="USD" selected>United States Dollar (USD)</option>
+                                        <option value="ZAR">South African Rand (ZAR)</option>
+                                    </select>
+                                    <select id="second-currency" class="placeholder" name="">
+                                        <option value="AUD">Australian Dollar (AUD)</option>
+                                        <option value="BGN">Bulgarian Lev (BGN)</option>
+                                        <option value="BRL">Brazilian Real (BRL)</option>
+                                        <option value="CAD">Canadian Dollar (CAD)</option>
+                                        <option value="CHF">Swiss Franc (CHF)</option>
+                                        <option value="CNY">Chinese Yuan (CNY)</option>
+                                        <option value="CZK">Czech Koruna (CZK)</option>
+                                        <option value="DKK">Danish Krone (DKK)</option>
+                                        <option value="EUR">Euro (EUR)</option>
+                                        <option value="GBP">Pound Sterling (GBP)</option>
+                                        <option value="HKD">Hong Kong Dollar (HKD)</option>
+                                        <option value="HUF">Hungarian Forint (HUF)</option>
+                                        <option value="IDR">Indonesian Rupiah (IDR)</option>
+                                        <option value="ILS">Israeli Shekel (ILS)</option>
+                                        <option value="INR">Indian Rupee (INR)</option>
+                                        <option value="ISK">Icelandic Krona (ISK)</option>
+                                        <option value="JPY">Japanese Yen (JPY)</option>
+                                        <option value="KRW">South Korean Won (KRW)</option>
+                                        <option value="MXN">Mexican Peso (MXN)</option>
+                                        <option value="MYR">Malaysian Ringgit (MYR)</option>
+                                        <option value="NOK">Norwegian Krone (NOK)</option>
+                                        <option value="NZD">New Zealand Dollar (NZD)</option>
+                                        <option value="PHP">Philippine Peso (PHP)</option>
+                                        <option value="PLN">Polish Zloty (PLN)</option>
+                                        <option value="RON">Romanian Leu (RON)</option>
+                                        <option value="SEK">Swedish Krona (SEK)</option>
+                                        <option value="SGD">Singapore Dollar (SGD)</option>
+                                        <option value="THB">Thai Baht (THB)</option>
+                                        <option value="TRY">Turkish Lira (TRY)</option>
+                                        <option value="USD">United States Dollar (USD)</option>
+                                        <option value="ZAR">South African Rand (ZAR)</option>
+                                    </select>
+                                    <input id="currency-amount" type="number" min="0" placeholder="100" />
+                                    <button id="convertBtn" type="button" class="btn btn-success ms-1 mt-2">Convert</button>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- UNIT CONVERTER -->
+                        <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                            <div class="card">
+                                <div class="card-header">Unit Converter</div>
+                                <div id="converterCard" class="card-body">
+                                    <h5 class="card-title">Convert between common travel units.</h5>
+                                    <select id="converterCategory" class="placeholder">
+                                        <option value="temperature">Temperature</option>
+                                        <option value="distance">Distance</option>
+                                        <option value="weight">Weight</option>
+                                        <option value="volume">Volume</option>
+                                    </select>
+                                    <div id="converterRow">
+                                        <input id="converterInput" type="number" placeholder="0" />
+                                        <select id="converterUnit"></select>
+                                    </div>
+                                    <button id="converterBtn" class="btn btn-success mt-2" type="button">Convert</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- COUNTRY INFO -->
+                        <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                            <div class="card">
+                                <div class="card-header">Country Info</div>
+                                <div id="countryCard" class="card-body">
+                                    <h5 class="card-title">Enter a country name for key travel info.</h5>
+                                    <input id="countryInput" class="placeholder" type="text" placeholder="Japan" />
+                                    <button id="countryBtn" class="btn btn-success my-2 my-sm-0 search" type="button">
+                                        <i class="fas fa-globe"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 

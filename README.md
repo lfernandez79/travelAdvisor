@@ -1,5 +1,5 @@
 # Travel Advisor
-Travel Advisor is a web app that allows frequent travelers to keep a dashboard of important information, including airport locations, timezones, and currency exchange rates. The app is designed to be easy to use and accessible on both phones and computers.
+Travel Advisor is a web app that allows frequent travelers to keep a dashboard of important information across six widgets: airport lookup, world time, weather, currency conversion, unit conversion, and country info. Widgets are organized into two tabs — **Travel** and **Reference** — keeping the interface clean and uncluttered. The app is designed to be easy to use and accessible on both phones and computers.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/084cfa77-9581-4632-9e57-14049a250313/deploy-status)](https://app.netlify.com/sites/traveladvisor/deploys)
 ![GitHub top language](https://img.shields.io/github/languages/top/lfernandez79/travelAdvisor?label=JavaScript)
@@ -62,3 +62,5 @@ The Unit Converter widget requires no API — all conversions (°C↔°F, km↔m
 > ~~Unit Converter widget~~ — Completed. Converts temperature, distance, weight, and volume using pure JS math — no API required.
 
 > ~~Country Info widget~~ — Completed. Shows flag, capital, region, population, languages, and currency for any country via REST Countries.
+
+> ~~Tabbed interface~~ — Completed. Six widgets organized into two pill tabs (Travel / Reference) to keep the dashboard clean and simple.

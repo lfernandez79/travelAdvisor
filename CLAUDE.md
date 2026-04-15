@@ -24,7 +24,16 @@ Single-page dashboard with six independent API-driven widgets. Each widget is an
 | Unit Converter | `src/modules/converter.js` | No API — pure JS math (°C↔°F, km↔mi, kg↔lbs, L↔gal) |
 | Country Info | `src/modules/country.js` | `restcountries.com/v3.1/name/{name}` — free, no key, returns flag/capital/population/languages/currency |
 
-`src/main.js` is the Vite entry point — it only imports the six modules.
+`src/main.js` is the Vite entry point — it imports the six modules and contains the tab-switching logic.
+
+## Tab Layout
+
+The six widgets are split across two Bootstrap pill tabs to keep the UI clean and uncluttered:
+
+- **Travel tab** (default): Airport Finder, World Time, Weather
+- **Reference tab**: Currency Converter, Unit Converter, Country Info
+
+Tab switching is handled by a small native JS listener in `src/main.js` rather than relying on Bootstrap's CDN JS bundle, which can fail to initialize before Vite's ES modules load.
 
 ## Environment Variables
 
