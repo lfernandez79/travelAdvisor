@@ -20,7 +20,13 @@ The following technologies are used in Travel Advisor:
 
 Here are some screenshots of Travel Advisor in action:
 
+**Travel tab**
+
 <img src="public/airPlane/travelAdvisor.png" width="70%">
+
+**Reference tab**
+
+<img src="public/airPlane/travelAdvisor2.png" width="70%">
 
 ## Getting Started
 
